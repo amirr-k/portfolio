@@ -1,14 +1,50 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
     padding: 0;
     margin: 0;
     background: transparent;
     text-decoration: none;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
-body{
-        background: rgb(0, 0, 0);
-        color: white;
-        overflow-y: scroll;
-        overflow: hidden;
+.menuItem {
+    cursor: pointer;
+    margin-right: 20px; 
+    font-size: large;
+    transition: color 0.25s ease; 
+}
+.menuItem:hover
+    {
+        color: rgb(189, 189, 192);
     }
+.menuItemName {
+    cursor: pointer;
+    margin-right: 380px;
+    font-size: large;
+    transition: color 0.25s ease; 
+}
+.menuItemName:hover
+    {
+        color: rgb(189, 189, 192);
+    }
+
+.imageOne {
+    width: 50px;
+    height: 50px;
+}
+
+.NavigationBar {
+    width: 100%;
+    height: 50px;
+    background-color: #d9d9da10; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    z-index: 1000;
+}
