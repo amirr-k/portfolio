@@ -6,9 +6,9 @@ function propagateDelay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms)); //function that creates a delay
 }
 
-async function typeText(setTypewriterText) {
+async function typingAnimation(setText) {
     const strings = [' Student.', 'n Athlete.', ' Software Engineer.', 'n Aspiring Attorney.'];
-    let time = 90; 
+    let time = 80; 
     let currentIndex = 0;
     //setup ends here
     while (1) //infinite loop
@@ -16,7 +16,7 @@ async function typeText(setTypewriterText) {
                     let currentWord = strings[currentIndex]; //word with i'th letter included
                     for (let i = 0; i <= currentWord.length; ++i) //loop each letter
                         {
-                            setTypewriterText(currentWord.slice(0,i)); //append next letter to text
+                            setText(currentWord.slice(0,i)); //display i'th letter using function
                             await propagateDelay(time); //wait before typing next letter
                         }
                     
@@ -24,7 +24,7 @@ async function typeText(setTypewriterText) {
 
                     for (let j = currentWord.length; j >= 0; --j)
                             {
-                                setTypewriterText(currentWord.slice(0, j)); //append next letter to text
+                                setText(currentWord.slice(0, j)); //remove j'th letter using function
                                 await propagateDelay(time); //wait before deleting next letter
                             }
                     
@@ -43,7 +43,10 @@ async function typeText(setTypewriterText) {
 }
 
 const Homepage = () => {
-    
+    const [outputText, setText] = useState(""); //initialize empty state(s)
+    useEffect(()=>{typingAnimation(setText);}, []);
+    //follow useEffect to update outputText state
+
     return (
         <nav className="Homepage">
             <div className="picture">
@@ -62,7 +65,7 @@ const Homepage = () => {
             </div>
             <div className="typeWriter">
                 <text className="iAmA">I am a</text>
-                <span className="enterWords">{typewriterText}</span>
+                <span className="enterWords">{outputText}</span>
                 <text className="cursor">︳</text>
             </div>
         </nav>
