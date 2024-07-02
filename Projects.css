@@ -1,0 +1,134 @@
+* {
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+.projectText
+    {
+        margin-top: 100px;
+        color: white; 
+        font-size: 60px;
+        display: flex;
+        justify-content: center;
+    }
+.projectLine
+    {
+        color: white;
+        font-weight: bold;
+        margin-top: -10px;
+        font-size: normal;
+        justify-content: center;
+        display: flex;
+        font-weight: normal;
+    }
+.boxOne
+    {
+        display: flex;
+        margin-top: 18px;
+        margin-left: 75px;
+    }
+.boxTwo
+    {
+        display: flex;
+        margin-top: 50px;
+        margin-left: 75px;
+    }
+.boxThree
+    {
+        display: flex;
+        margin-top: -690px;
+        margin-left: 760px;
+    }
+.boxFour
+    {
+        margin-left: 760px;
+        margin-top: 61px;
+    }
+.projectOne
+    {
+        height: 300px;
+        width: 600px;
+        padding: 20px;
+        margin: 10px;
+        border: 2px solid paleturquoise;
+        border-radius: 10px;
+    }
+.projectTwo
+    {
+        height: 300px;
+        width: 600px;
+        padding: 20px;
+        margin: 10px;
+        border: 2px solid paleturquoise;
+        border-radius: 10px;
+    }
+.projectThree
+    {
+        height: 300px;
+        width: 600px;
+        padding: 20px;
+        margin: 10px;
+        border: 2px solid paleturquoise;
+        border-radius: 10px;
+    }
+.projectFour
+    {
+        height: 300px;
+        width: 600px;
+        padding: 20px;
+        margin: 10px;
+        border: 2px solid paleturquoise;
+        border-radius: 10px;
+    }
+.keyWords
+    {
+        font-weight: bolder;
+    }
+h2 
+    {
+        text-align: center;
+        color: paleturquoise;
+    }
+    
+p
+    {
+        text-align: center;
+        font-size: large;
+        display: flex;
+        margin-top: 15px;
+        color: rgb(255, 255, 255);
+    }
+.coming
+    {
+        margin-top: 100px;
+        justify-content: center;
+        font-size: 38px;
+        display: flex;
+        color: white;
+        animation: 5s glowing linear infinite;
+    }
+@keyframes glowing
+    {
+        0% {
+            opacity: 30%
+            }
+        40%
+            {
+                opacity: 8%
+            }
+        50%
+            {
+                opacity: 8%
+            }
+        60%
+            {
+                opacity: 8%
+            }
+        100%
+            {
+                opacity: 30%
+            }
+    }

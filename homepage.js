@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './homepage.css';
-import imageOne from './resources2/logo.png';
+import imageOne from './resources2/CenterIcon.gif';
 
 function propagateDelay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms)); //function that creates a delay
@@ -8,7 +8,7 @@ function propagateDelay(ms) {
 
 async function typingAnimation(setText) {
     const strings = [' Student.', 'n Athlete.', ' Software Engineer.', 'n Aspiring Attorney.'];
-    let time = 80; 
+    let time = 75; 
     let currentIndex = 0;
     //setup ends here
     while (1) //infinite loop
@@ -17,10 +17,10 @@ async function typingAnimation(setText) {
                     for (let i = 0; i <= currentWord.length; ++i) //loop each letter
                         {
                             setText(currentWord.slice(0,i)); //display i'th letter using function
-                            await propagateDelay(time); //wait before typing next letter
+                            await propagateDelay(time*1.2); //wait before typing next letter
                         }
                     
-                    await propagateDelay(time*10);
+                    await propagateDelay(time*20);
 
                     for (let j = currentWord.length; j >= 0; --j)
                             {
@@ -28,7 +28,7 @@ async function typingAnimation(setText) {
                                 await propagateDelay(time); //wait before deleting next letter
                             }
                     
-                    await propagateDelay(time*10);
+                    await propagateDelay(time*20);
                      
                     if (currentIndex === 3) //last word,
                             {
@@ -53,7 +53,7 @@ const Homepage = () => {
                 <img src={imageOne} alt="imageOne" className="imageOne" />
             </div>
             <div className="text">
-                <text>Welcome to my portfolio!</text>
+                <text>Welcome to my webpage!</text>
             </div>
             <div className="staticText">
                 <text className="intro">My name is </text>
