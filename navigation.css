@@ -20,7 +20,7 @@ html {
         color: rgb(235, 235, 235);
     }
 .menuItemName {
-    cursor: pointer;
+    cursor: default;
     margin-right: 960px;
     font-size: x-large;
     transition: color 0.25s ease; 

@@ -15,9 +15,9 @@ import Resume from './resources2/resume.jpg'
 const AboutMe = () =>
         {
             return (
-                    <about className = "aboutMe">
+                    <section id = 'about'>
                         <div className = "Opener">
-                            <text className = "title">About Me</text>
+                            <text className = "title">ABOUT ME</text>
                             <text className = "aboutLine">______________________________________</text>
                         </div>
                         <div className = "aboutText">
@@ -80,10 +80,7 @@ const AboutMe = () =>
                         </div>
                             
                         </div>
-
-
-                        
-                    </about>
+                    </section>
                 );
         }
 

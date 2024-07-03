@@ -6,12 +6,9 @@
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
-.aboutMe
-    {
-        color: white; 
-    }
 .title
     {
+        color: white;
         font-size: 60px;
         display: flex;
         justify-content: center;
@@ -23,12 +20,14 @@
     }
 .symbolOne
     {
+        text-shadow: 0 0 40px paleturquoise;
         font-size: xxx-large;
         margin-left: 140px;
         color: paleturquoise; 
     }
 .symbolTwo
     {
+        text-shadow: 0 0 100px paleturquoise;
         display: flex;
         margin-top: -10px;
         font-size: xxx-large;
@@ -37,12 +36,14 @@
     }
 .symbolThree
     {
+        text-shadow: 0 0 15px paleturquoise;
         font-size: xxx-large;
         margin-left: 1032px;
         color: paleturquoise; 
     }
 .symbolFour
     {
+        text-shadow: 0 0 15px paleturquoise;
         display: flex;
         margin-top: -55px;
         font-size: xxx-large;
@@ -58,6 +59,7 @@
         justify-content: center;
         display: flex;
         font-weight: normal;
+        color:white;
     }
 .realText
     {
@@ -84,6 +86,7 @@
     }
 .Python
     {
+        box-shadow: 0 0 15px paleturquoise;
         display: flex;
         margin-top: 15px;
         width: 100px;
@@ -109,6 +112,7 @@
     }
 .CPlusPlus
 { 
+    box-shadow: 0 0 15px paleturquoise;
     width: 100px;
     height: 100px;
     border-radius: 50%; 
@@ -126,6 +130,7 @@
     }
 .Git
     {
+        box-shadow: 0 0 15px paleturquoise;
         width: 100px;
         height: 100px;
         border-radius: 50%; 
@@ -150,6 +155,7 @@
     }
 .React
     {
+        box-shadow: 0 0 15px paleturquoise;
         display: flex;
         margin-left: 440px;
         margin-top: -250px;
@@ -167,6 +173,7 @@
     }
 .CSS
     {
+        box-shadow: 0 0 15px paleturquoise;
         margin-left: 135px;
         margin-top: -180px;
         margin-bottom: 100px;
@@ -191,6 +198,7 @@
     }
 .JS
     {
+        box-shadow: 0 0 15px paleturquoise;
         display: flex;
         width: 100px;
         height: 100px;
@@ -215,6 +223,7 @@
     }
 .HTML
     {
+        box-shadow: 0 0 15px paleturquoise;
         margin-left: 385px;
         margin-top: -100px;
         width: 100px;
@@ -244,19 +253,19 @@
         text-shadow: 100;
         font-size: 37px;
         font-weight: bolder;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
 .gitText
     {
         display: inline-block;
     }
-.gitImg {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-    background-color: white;
-    border-radius: 60%;
-}
+.gitImg 
+    {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        background-color: white;
+        border-radius: 60%;
+    }
 .gitImg img
     {
         display: flex;
@@ -265,21 +274,23 @@
         margin-top: -1px;
         margin-left: -1px;
     }
-.gitButton {
-    display: flex;
-    margin-left: 997px;
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    background-color: rgb(0,0,0);
-    color: rgb(255, 255, 255);
-    padding: 15px 25px;
-    border: 3px solid paleturquoise;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: large;
-    transition: transform 2s ease; 
-}
+.gitButton 
+    {
+        box-shadow: 0 0 15px paleturquoise;
+        display: flex;
+        margin-left: 997px;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        background-color: rgb(0,0,0);
+        color: rgb(255, 255, 255);
+        padding: 15px 25px;
+        border: 3px solid paleturquoise;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: large;
+        transition: transform 2s ease; 
+    }
 .gitButton:hover
     {
         transform: scale(1.2);
@@ -289,13 +300,14 @@
     {
         display: inline-block;
     }
-.LIImg {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-    background-color: white;
-    border-radius: 60%;
-}
+.LIImg 
+    {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        background-color: white;
+        border-radius: 60%;
+    }
 .LIImg img
     {
         display: flex;
@@ -304,37 +316,40 @@
         margin-top: -1px;
         margin-left: -1px;
     }
-.LIButton {
-    display: flex;
-    margin-left: 997px;
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    background-color: #0077B5;
-    color: rgb(255, 255, 255);
-    padding: 15px 20px;
-    border: 3px solid paleturquoise;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: large;
-    transition: transform 2s ease; 
-}
+.LIButton 
+    {
+        box-shadow: 0 0 15px paleturquoise;
+        display: flex;
+        margin-left: 997px;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        background-color: #0077B5;
+        color: rgb(255, 255, 255);
+        padding: 15px 20px;
+        border: 3px solid paleturquoise;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: large;
+        transition: transform 2s ease; 
+    }
 .LIButton:hover
     {
         transform: scale(1.2);
         transition: transform 2s ease; 
     }
-    .LinkedText
+.LinkedText
     {
         display: inline-block;
     }
-.ResumeImg {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-    background-color: white;
-    border-radius: 60%;
-}
+.ResumeImg 
+    {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        background-color: white;
+        border-radius: 60%;
+    }
 .ResumeImg img
     {
         display: flex;
@@ -343,21 +358,23 @@
         margin-top: px;
         margin-left: -3px;
     }
-.ResumeButton {
-    display: flex;
-    margin-left: 997px;
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    padding: 15px 22px;
-    border: 3px solid paleturquoise;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: large;
-    transition: transform 2s ease; 
-}
+.ResumeButton 
+    {
+        box-shadow: 0 0 15px paleturquoise;
+        display: flex;
+        margin-left: 997px;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        padding: 15px 22px;
+        border: 3px solid paleturquoise;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: large;
+        transition: transform 2s ease; 
+    }
 .ResumeButton:hover
     {
         transform: scale(1.2);

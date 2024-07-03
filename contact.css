@@ -1,0 +1,38 @@
+.contact
+    {
+        color: white; 
+        font-size: 60px;
+        display: flex;
+        justify-content: center;
+        margin-top: 400px;
+
+    }   
+.contactText 
+    {
+        margin-top: -350px;
+    }
+.contactLine 
+    {
+        color: white;
+        font-weight: bold;
+        margin-top: -10px;
+        font-size: normal;
+        justify-content: center;
+        display: flex;
+    }
+.phone
+    {
+        font-size: xx-large;
+        display:flex;
+        margin-top: 20px;
+        justify-content: center;
+        color:paleturquoise
+    }
+.email
+    {
+        font-size: xx-large;
+        display:flex;
+        margin-top: 20px;
+        justify-content: center;
+        color:paleturquoise
+    }

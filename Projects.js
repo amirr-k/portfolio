@@ -1,14 +1,16 @@
 import React from 'react';
 import './Projects.css'
+import git from './resources2/Git.png'
+import imgOne from './resources2/project1.png'
 
 
 
 const Projects = () =>
     {
         return (
-            <proj>
+            <section id = 'projects'>
                 <div className = "opening">
-                            <text className = "projectText">Projects</text>
+                            <text className = "projectText">PROJECTS</text>
                             <text className = "projectLine">______________________________________</text>
                 </div>
                 <div>
@@ -21,7 +23,10 @@ const Projects = () =>
                                     It has been designed to give a brief glimpse into who I am
                                     through an interactive, user-friendly interface.
                                 </p>
-
+                                <img src = {imgOne} alt = '' className = "projImage"></img>
+                                <button className = "button">
+                                        <img src = {git} alt = ""></img>
+                                </button>
                                 </div>
                          </div>
                         <div className = "boxTwo">
@@ -42,7 +47,7 @@ const Projects = () =>
                     </body>
                 </div>
                 
-            </proj>
+            </section>
 
         );
     }

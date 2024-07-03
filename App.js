@@ -3,6 +3,7 @@ import Homepage from "./homepage";
 import AboutMe from "./about";
 import Projects from "./Projects.js";
 import Gallery from "./gallery.js";
+import ContactMe from "./contact.js"
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <AboutMe/>
       <Projects/>
       <Gallery/>
+      <ContactMe/>
     </div>
   );
 }

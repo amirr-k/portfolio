@@ -1,0 +1,67 @@
+* {
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.gallery {
+    color: white; 
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    margin-top: 400px;
+}
+
+.galleryText {
+    margin-top: -300px;
+}
+
+.galleryLine {
+    color: white;
+    font-weight: bold;
+    margin-top: -10px;
+    font-size: normal;
+    justify-content: center;
+    display: flex;
+}
+
+.firstCar {
+    position: relative; 
+    width: 360px;
+    margin-top: 30px;
+}
+.athletePic {
+    position: relative; 
+    width: 360px;
+    margin-top: 30px;
+}
+.puppyPic {
+    position: relative; 
+    width: 360px;
+    margin-top: 30px;
+}
+.sfPic {
+    position: relative; 
+    width:360px;
+    margin-top: 30px;
+}
+.grownPic {
+    position: relative; 
+    width: 433px;
+    margin-top: -4px;
+}
+.sunPic
+    {
+        position: relative; 
+        width: 548px;
+        margin-top: -3.5px;
+    }
+.sfPic2
+    {
+        position: relative; 
+        width: 458px;
+        margin-top: -3.5px;
+    }

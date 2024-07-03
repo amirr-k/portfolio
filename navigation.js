@@ -10,11 +10,11 @@ const NavigationBar = () => {
 
                     <nav className = "NavigationBar">
                         <div className = "menu">
-                                <Link className = "menuItemName">Amir Kiadi</Link>
-                                <Link className = "menuItem">About Me</Link>
-                                <Link className = "menuItem">Projects</Link>
-                                <Link className = "menuItem">Gallery</Link>
-                                <Link className = "menuItem">Contact</Link>
+                                <text className = "menuItemName">Amir Kiadi</text>
+                                <Link className = "menuItem" activeClass='active' to='about' spy = {true} offset = {-10}>About Me</Link>
+                                <Link className = "menuItem" activeClass='active' to='projects' spy = {true}>Projects</Link>
+                                <Link className = "menuItem" activeClass='active' to='gallery' spy = {true} offset = {140}>Gallery</Link>
+                                <Link className = "menuItem" activeClass='active' to='contact' spy = {true} offset = {50}>Contact</Link>
                         </div>
                     </nav>
             );
