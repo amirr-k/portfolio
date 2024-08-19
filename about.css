@@ -20,14 +20,14 @@
     }
 .symbolOne
     {
-        text-shadow: 0 0 40px paleturquoise;
+        text-shadow: 0 0 20px paleturquoise;
         font-size: xxx-large;
         margin-left: 140px;
         color: paleturquoise; 
     }
 .symbolTwo
     {
-        text-shadow: 0 0 100px paleturquoise;
+        text-shadow: 0 0 20px paleturquoise;
         display: flex;
         margin-top: -10px;
         font-size: xxx-large;
@@ -36,14 +36,14 @@
     }
 .symbolThree
     {
-        text-shadow: 0 0 15px paleturquoise;
+        text-shadow: 0 0 20px paleturquoise;
         font-size: xxx-large;
         margin-left: 1032px;
         color: paleturquoise; 
     }
 .symbolFour
     {
-        text-shadow: 0 0 15px paleturquoise;
+        text-shadow: 0 0 20px paleturquoise;
         display: flex;
         margin-top: -55px;
         font-size: xxx-large;
