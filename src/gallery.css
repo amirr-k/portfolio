@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(175, 238, 238, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(175, 238, 238, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(175, 238, 238, 0.5);
+    }
+}
+
+#gallery {
+    min-height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 2rem;
+}
+
+.gallery {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    letter-spacing: -0.02em;
+    color: white;
+}
+
+.gallery.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.galleryText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8vh;
+    margin-bottom: 2rem;
+}
+
+.galleryLine {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.galleryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.flipCard {
+    background-color: transparent;
+    width: 100%;
+    height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.flipCard.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.flipCardInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    box-shadow: 0 0 15px paleturquoise;
+    border-radius: 10px;
+}
+
+.flipCard:hover .flipCardInner {
+    transform: rotateY(180deg);
+}
+
+.flipCardFront, .flipCardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.flipCardFront {
+    background-color: transparent;
+}
+
+.flipCardFront img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.flipCardBack {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border: 2px solid paleturquoise;
+}
+
+.flipCardBack h3 {
+    color: paleturquoise;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px paleturquoise;
+}
+
+.flipCardBack p {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        font-size: 2.5rem;
+    }
+    
+    .galleryLine {
+        font-size: 1rem;
+    }
+    
+    .galleryGrid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+    
+    .flipCard {
+        height: 250px;
+    }
+    
+    .flipCardBack h3 {
+        font-size: 1.2rem;
+    }
+    
+    .flipCardBack p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        font-size: 2rem;
+    }
+    
+    .galleryGrid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .flipCard {
+        height: 200px;
+    }
+}
+
+.firstCar {
+    position: relative; 
+    width: 360px;
+    margin-top: 30px;
+}
+.athletePic {
+    position: relative; 
+    width: 360px;
+    margin-top: 30px;
+}
+.puppyPic {
+    position: relative; 
+    width: 360px;
+    margin-top: 30px;
+}
+.sfPic {
+    position: relative; 
+    width:360px;
+    margin-top: 30px;
+}
+.grownPic {
+    position: relative; 
+    width: 433px;
+    margin-top: -4px;
+}
+.sunPic
+    {
+        position: relative; 
+        width: 548px;
+        margin-top: -3.5px;
+    }
+.sfPic2
+    {
+        position: relative; 
+        width: 458px;
+        margin-top: -3.5px;
+    }

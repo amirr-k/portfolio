@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px rgba(175, 238, 238, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(175, 238, 238, 0.8);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(175, 238, 238, 0.5);
+    }
+}
+
+#contact {
+    min-height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+#contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, paleturquoise, transparent);
+    opacity: 0.3;
+}
+
+.contact {
+    color: white; 
+    font-size: 4rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    letter-spacing: -0.02em;
+}   
+
+.contactText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8vh;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.contactLine {
+    color: white;
+    font-weight: 500;
+    font-size: 1.2rem;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    margin-bottom: 2rem;
+    opacity: 0.7;
+    letter-spacing: 0.1em;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 3rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 90%;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.contact-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+}
+
+.phone {
+    font-size: 1.5rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.email {
+    font-size: 1rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    color: paleturquoise;
+    animation: glow 2s infinite;
+}
+
+.contact.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.info.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-message {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.contact-message p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .contact {
+        font-size: 3rem;
+    }
+    
+    .contactLine {
+        font-size: 1rem;
+    }
+    
+    .info {
+        padding: 2rem;
+    }
+    
+    .phone, .email {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact {
+        font-size: 2.5rem;
+    }
+    
+    .info {
+        padding: 1.5rem;
+    }
+    
+    .phone, .email {
+        font-size: 1.1rem;
+    }
+    
+    .contact-item {
+        padding: 0.8rem;
+    }
+}

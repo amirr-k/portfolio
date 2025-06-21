@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body, html {
+    width: 100%;
+    min-height: 100vh;
+    background: black;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.Opener {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    letter-spacing: -0.02em;
+    color: white;
+}
+
+.title.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.aboutLine {
+    font-size: 1.5rem;
+    color: #ccc;
+}
+
+.aboutText {
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.aboutText.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.realText {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    font-weight: bold;
+}
+
+.realText.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.devStack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.devSection {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: paleturquoise;
+    text-shadow: 0 0 10px paleturquoise;
+}
+
+.iconRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.Python, .CPlusPlus, .Git, .React, .Java, .SQL, .JS, .HTML {
+    color: white;
+    box-shadow: 0 0 15px paleturquoise;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: transparent;
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s, transform 0.3s;
+    overflow: hidden;
+}
+
+.Python:hover, .CPlusPlus:hover, .Git:hover, .React:hover, .Java:hover, .SQL:hover, .JS:hover, .HTML:hover {
+    background-color: paleturquoise;
+    transform: scale(1.1);
+}
+
+.Python img, .CPlusPlus img, .Git img, .React img, .Java img, .SQL img, .CSS img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.JS img, .HTML img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    filter: brightness(0.4) invert(0.6);
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.socialSection {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: paleturquoise;
+    text-shadow: 0 0 10px paleturquoise;
+}
+
+.socialButtons {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.gitButton, .LIButton, .ResumeButton {
+    box-shadow: 0 0 15px paleturquoise;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border: 3px solid paleturquoise;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: transform 0.3s, background 0.3s, color 0.3s;
+    gap: 0.7rem;
+}
+
+.gitButton:hover, .LIButton:hover, .ResumeButton:hover {
+    transform: scale(1.1);
+}
+
+.LIButton {
+    background-color: #0077B5;
+    color: #fff;
+    font-weight: bold;
+}
+
+.ResumeButton {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-weight: bold;
+}
+
+.gitImg, .LIImg, .ResumeImg {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.gitImg img, .LIImg img, .ResumeImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.LIImg {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.LIImg svg {
+    width: 24px;
+    height: 24px;
+    color: white;
+}
+
+.ResumeImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8) contrast(1.2);
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .aboutLine {
+        font-size: 1.2rem;
+    }
+
+    .realText {
+        font-size: 1rem;
+    }
+
+    .iconRow {
+        gap: 1rem;
+    }
+
+    .Python, .CPlusPlus, .Git, .React, .Java, .SQL, .JS, .HTML {
+        width: 60px;
+        height: 60px;
+    }
+
+    .socialButtons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .gitButton, .LIButton, .ResumeButton {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .gitImg, .LIImg, .ResumeImg {
+        width: 28px;
+        height: 28px;
+    }
+}
