@@ -19,7 +19,7 @@ function App() {
       setShowBar(false); // Hide bar, show only Amir Kiadi
       // Phase 2: Hold Amir Kiadi for 500ms
       const holdTimer = setTimeout(() => {
-        setIsLoading(false);
+      setIsLoading(false);
       }, holdTime);
       return () => clearTimeout(holdTimer);
     }, loadingTime);
@@ -33,8 +33,8 @@ function App() {
           <h1 className="loading-name">Amir Kiadi</h1>
           {showBar && (
             <div className="loading-bar fade-bar">
-              <div className="loading-progress"></div>
-            </div>
+            <div className="loading-progress"></div>
+          </div>
           )}
         </div>
       </div>

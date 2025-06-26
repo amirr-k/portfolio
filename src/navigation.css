@@ -18,9 +18,18 @@ html {
     left: 0;
     display: flex;
     align-items: center;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding: 0 2vw;
     z-index: 1000;
+}
+.menu {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+.menuLinks {
+    display: flex;
+    align-items: center;
 }
 .menuItemName {
     cursor: default;
@@ -30,17 +39,14 @@ html {
     background: transparent;
     padding-right: 50px;
 }
-.menuItemName:hover {
-    color: rgb(189, 189, 192);
-}
-.menuItems {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    width: 60%;
-    justify-content: space-between;
-    padding-left: 0 30px;
-    padding-right: 0 30px;
+.menuItemFirst {
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: color 0.25s ease;
+    background: transparent;
+    white-space: nowrap;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 .menuItem {
     cursor: pointer;
@@ -50,15 +56,6 @@ html {
     white-space: nowrap;
     padding-left: 30px;
     padding-right: 30px;
-}
-.menuItemFirst{
-    cursor: pointer;
-    font-size: 0.95rem;
-    transition: color 0.25s ease;
-    background: transparent;
-    white-space: nowrap;
-    padding-left: 720px;
-    padding-right: 30px
 }
 .menuItem:hover {
     color: rgb(235, 235, 235);
@@ -70,21 +67,20 @@ html {
     .NavigationBar {
         flex-direction: column;
         height: auto;
-        padding: 10px 5%;
+        padding: 10px 2vw;
         position: relative;
+    }
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
     }
     .menuItemName {
         font-size: 1rem;
         margin-bottom: 10px;
         padding-right: 0;
     }
-    .menuItems {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-    .menuItem {
+    .menuItemFirst, .menuItem {
         font-size: 0.9rem;
         padding: 5px 10px;
     }

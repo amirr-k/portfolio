@@ -4,19 +4,18 @@ import './navigation.css'
 import {Link} from 'react-scroll';
 
 const NavigationBar = () => {
-            return (
-                  
-
-
-                    <nav className = "NavigationBar">
-                        <div className = "menu">
-                                <text className = "menuItemName">Amir Kiadi</text>
-                                <Link className = "menuItemFirst" activeClass='active' to='about' spy = {true} offset = {-10}>About Me</Link>
-                                <Link className = "menuItem" activeClass='active' to='projects' spy = {true}>Projects</Link>
-                                <Link className = "menuItem" activeClass='active' to='gallery' spy = {true} offset = {140}>Gallery</Link>
-                                <Link className = "menuItem" activeClass='active' to='contact' spy = {true} offset = {50}>Contact</Link>
-                        </div>
-                    </nav>
-            );
-        }
+    return (
+        <nav className="NavigationBar">
+            <div className="menu">
+                <span className="menuItemName">Amir Kiadi</span>
+                <div className="menuLinks">
+                    <Link className="menuItem" activeClass='active' to='about' spy={true} offset={-45}>About Me</Link>
+                    <Link className="menuItem" activeClass='active' to='projects' spy={true} offset={-45}>Projects</Link>
+                    <Link className="menuItem" activeClass='active' to='gallery' spy={true} offset={-45}>Gallery</Link>
+                    <Link className="menuItem" activeClass='active' to='contact' spy={true} offset={-45}>Contact</Link>
+                </div>
+            </div>
+        </nav>
+    );
+}
 export default NavigationBar
