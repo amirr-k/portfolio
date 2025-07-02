@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect} from 'react';
 import './homepage.css';
 import imageOne from './resources2/CenterIcon.gif';
 
@@ -8,7 +8,7 @@ function propagateDelay(ms) {
 
 async function typingAnimation(setText) {
     const strings = ['Computer Engineer', 'Researcher', 'Software Engineer', 'Student', 'Athlete'];
-    let time = 75; 
+    let time = 40; 
     let currentIndex = 0;
     //setup ends here
     while (1) //infinite loop

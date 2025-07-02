@@ -38,7 +38,7 @@ const ContactMe = () => {
                 </div>
                 <div className="contact-item">
                     <div className="contact-icon">✉️</div>
-                    <div className="email">amir.kiadi@outlook.com</div>
+                    <button id='email' className="email" onClick={() => window.open('mailto:amir.kiadi@outlook.com', 'blank')}>amir.kiadi@outlook.com</button>
                 </div>
                 <div className="contact-message">
                     <p>Always looking for cool projects to work on, feel free to contact me.</p>

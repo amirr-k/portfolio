@@ -14,17 +14,6 @@ body, html {
     background: transparent;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 #about {
     display: flex;
     flex-direction: column;
@@ -218,16 +207,6 @@ body, html {
     filter: brightness(0) invert(1);
 }
 
-.LIImg {
-    width: 40px;
-    height: 40px;
-    background-color: transparent;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
 
 .LIImg svg {
     width: 24px;
@@ -246,10 +225,6 @@ body, html {
 @media (max-width: 768px) {
     .title {
         font-size: 2rem;
-    }
-
-    .aboutLine {
-        font-size: 1.2rem;
     }
 
     .realText {
