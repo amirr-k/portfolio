@@ -8,7 +8,7 @@ function propagateDelay(ms) {
 
 async function typingAnimation(setText) {
     const strings = ['Computer Engineer', 'Researcher', 'Software Engineer', 'Student', 'Athlete'];
-    let time = 40; 
+    let time = 60; 
     let currentIndex = 0;
     //setup ends here
     while (1) //infinite loop
