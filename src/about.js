@@ -47,8 +47,8 @@ const AboutMe = () => {
             <div ref={aboutTextRef} className="aboutText">
                 <p ref={realTextRef} className="realText">
                     I am a Computer Engineering student
-                    at the University of California, San Diego. My journey started at the age of 8 years old when my father introduced me
-                    basic HTML. Ever since, I have developed a deep passion for programming and have been driven by one clear goal; to become a Software Engineer.
+                    at the University of California, San Diego. My journey started at the age of 8 years old when my father introduced me to
+                    HTML. Ever since, I have developed a deep passion for programming and have been driven by one clear goal; to become a Software Engineer.
                 </p>
             </div>
             <div className="devStack">

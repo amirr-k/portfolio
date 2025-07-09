@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import './Projects.css'
 import git from './resources2/Git.png'
 import imgOne from './resources2/project1.png'
+import imgTwo from './resources2/shell.png'
 
 const Projects = () => {
     const titleRef = useRef(null);
@@ -55,8 +56,16 @@ const Projects = () => {
                     </div>
                 </div>
                 <div ref={el => projectsRef.current[1] = el} className="boxTwo">
-                    <div className="projectTwo">
-                        <h2 className='coming'>[COMING SOON]</h2>
+                     <div className="projectOne">
+                        <h2>Optimized UNIX Shell Clone</h2>
+                        <p>Built a UNIX shell in C with POSIX process management (fork, execvp, etc), 
+                            passing 100% of tests across 20+ cases. It has been optimized beyond 
+                            the original project specifications for improved performance.
+                        </p>
+                        <img src={imgTwo} alt="Project Preview" className="projImageTwo" />
+                        <button className="button" onClick={() => window.open('https://github.com/amirr-k/Optimized-Unix-Shell', '_blank')}>
+                            <img src={git} alt="GitHub" />
+                        </button>
                     </div>
                 </div>
                 <div ref={el => projectsRef.current[2] = el} className="boxThree">
