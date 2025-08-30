@@ -83,13 +83,13 @@ const Projects = () => {
                     </div>
                 </div>
                 <div ref={el => projectsRef.current[3] = el} className="boxFour">
-                <h2>UCMe Matchmaking Application</h2>
-                        <p> Designed and developed a full stack matchmaking application that allows students
-                            to connect with classmates based on their interests and preferences.
-                            Built using React.js, FASTAPI, JWT Authentication, and SQLAlchemy (PostgreSQL).
+                <h2>Voice Controlled AWS Manager</h2>
+                        <p> Built a voice controlled application that 
+                            starts/stops an EC2 instance from user speech with an 18s end to end response time.
+                            Built using React.js, AWS Lambda, and AWS Transcribe.
                         </p>
                         <img src={imgTwo} alt="Project Preview" className=""/>
-                        <button className="button" onClick={() => window.open('https://github.com/amirr-k', '_blank')}>
+                        <button className="button" onClick={() => window.open('https://github.com/amirr-k/Voice-Controlled-AWS', '_blank')}>
                             <img src={git} alt="GitHub"/>
                         </button>
                 </div>
