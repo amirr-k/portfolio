@@ -68,15 +68,30 @@ const Projects = () => {
                         </button>
                     </div>
                 </div>
+        
                 <div ref={el => projectsRef.current[2] = el} className="boxThree">
-                    <div className="projectThree">
-                        <h2 className='coming'>[COMING SOON]</h2>
+                <div className="projectOne">
+                        <h2>UCMe Matchmaking Application</h2>
+                        <p> Designed and developed a full stack matchmaking application that allows students
+                            to connect with classmates based on their interests and preferences.
+                            Built using React.js, FASTAPI, JWT Authentication, and SQLAlchemy (PostgreSQL).
+                        </p>
+                        <img src={imgTwo} alt="Project Preview" className=""/>
+                        <button className="button" onClick={() => window.open('https://github.com/amirr-k/UCMe', '_blank')}>
+                            <img src={git} alt="GitHub"/>
+                        </button>
                     </div>
                 </div>
                 <div ref={el => projectsRef.current[3] = el} className="boxFour">
-                    <div className="projectFour">
-                        <h2 className='coming'>[COMING SOON]</h2>
-                    </div>
+                <h2>UCMe Matchmaking Application</h2>
+                        <p> Designed and developed a full stack matchmaking application that allows students
+                            to connect with classmates based on their interests and preferences.
+                            Built using React.js, FASTAPI, JWT Authentication, and SQLAlchemy (PostgreSQL).
+                        </p>
+                        <img src={imgTwo} alt="Project Preview" className=""/>
+                        <button className="button" onClick={() => window.open('https://github.com/amirr-k', '_blank')}>
+                            <img src={git} alt="GitHub"/>
+                        </button>
                 </div>
             </div>
         </section>

@@ -83,7 +83,7 @@ const AboutMe = () => {
                         </div>
                         <span className="gitText">GitHub</span>
                     </button>
-                    <button id="LIButton" className="LIButton" onClick={() => window.open('https://linkedin.com/in/amirkiadi', '_blank')}>
+                    <button id="LIButton" className="LIButton" onClick={() => window.open('https://linkedin.com/in/amirr-k', '_blank')}>
                         <div className="LIImg">
                             <img src={LinkedIn} alt="LinkedIn" />
                         </div>
