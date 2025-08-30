@@ -3,8 +3,8 @@ import './Projects.css'
 import git from './resources2/Git.png'
 import imgOne from './resources2/project1.png'
 import imgTwo from './resources2/shell.png'
-import imgThree from './resources2/ucme.png'
-import imgFour from './resources2/aws.png'
+import imgThree from './resources2/UCMe.png'
+import imgFour from './resources2/AWS.png'
 
 const Projects = () => {
     const titleRef = useRef(null);
@@ -64,7 +64,7 @@ const Projects = () => {
                             passing 100% of tests across 20+ cases. It has been optimized beyond 
                             the original project specifications for improved performance.
                         </p>
-                        <img src={imgTwo} alt="Project Preview" className="projImageTwo" />
+                        <img src={imgTwo} alt="Project Preview" className="projImage" />
                         <button className="button" onClick={() => window.open('https://github.com/amirr-k/Optimized-Unix-Shell', '_blank')}>
                             <img src={git} alt="GitHub" />
                         </button>
@@ -78,22 +78,24 @@ const Projects = () => {
                             to connect with classmates based on their interests and preferences.
                             Built using React.js, FASTAPI, JWT Authentication, and SQLAlchemy (PostgreSQL).
                         </p>
-                        <img src={imgThree} alt="Project Preview" className="projImageTwo"/>
+                        <img src={imgThree} alt="Project Preview" className="projImage"/>
                         <button className="button" onClick={() => window.open('https://github.com/amirr-k/UCMe', '_blank')}>
                             <img src={git} alt="GitHub"/>
                         </button>
                     </div>
                 </div>
                 <div ref={el => projectsRef.current[3] = el} className="boxFour">
-                <h2>Voice Controlled AWS Manager</h2>
+                    <div className="projectOne">
+                        <h2>Voice Controlled AWS Manager</h2>
                         <p> Built a voice controlled application that 
                             starts/stops an EC2 instance from user speech with an 18s end to end response time.
-                            Built using React.js, AWS Lambda, and AWS Transcribe.
+                            The application is built using React.js, AWS Lambda, and AWS Transcribe, and was debugged using AWS CloudWatch.
                         </p>
-                        <img src={imgFour} alt="Project Preview" className="projImageTwo"/>
+                        <img src={imgFour} alt="Project Preview" className="projImage"/>
                         <button className="button" onClick={() => window.open('https://github.com/amirr-k/Voice-Controlled-AWS', '_blank')}>
                             <img src={git} alt="GitHub"/>
                         </button>
+                    </div>
                 </div>
             </div>
         </section>
