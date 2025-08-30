@@ -3,6 +3,8 @@ import './Projects.css'
 import git from './resources2/Git.png'
 import imgOne from './resources2/project1.png'
 import imgTwo from './resources2/shell.png'
+import imgThree from './resources2/ucme.png'
+import imgFour from './resources2/aws.png'
 
 const Projects = () => {
     const titleRef = useRef(null);
@@ -76,7 +78,7 @@ const Projects = () => {
                             to connect with classmates based on their interests and preferences.
                             Built using React.js, FASTAPI, JWT Authentication, and SQLAlchemy (PostgreSQL).
                         </p>
-                        <img src={imgTwo} alt="Project Preview" className=""/>
+                        <img src={imgThree} alt="Project Preview" className=""/>
                         <button className="button" onClick={() => window.open('https://github.com/amirr-k/UCMe', '_blank')}>
                             <img src={git} alt="GitHub"/>
                         </button>
@@ -88,7 +90,7 @@ const Projects = () => {
                             starts/stops an EC2 instance from user speech with an 18s end to end response time.
                             Built using React.js, AWS Lambda, and AWS Transcribe.
                         </p>
-                        <img src={imgTwo} alt="Project Preview" className=""/>
+                        <img src={imgFour} alt="Project Preview" className=""/>
                         <button className="button" onClick={() => window.open('https://github.com/amirr-k/Voice-Controlled-AWS', '_blank')}>
                             <img src={git} alt="GitHub"/>
                         </button>
