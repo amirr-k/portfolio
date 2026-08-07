@@ -3,14 +3,21 @@ import './Contact.css';
 import SectionHead from './SectionHead';
 import { LINKS } from '../data/site';
 import { HAS_FORM_BACKEND, WEB3FORMS_ENDPOINT, WEB3FORMS_KEY } from '../config';
-import { ArrowRight, Check, Spinner } from './Icons';
+import { ArrowRight, Spinner } from './Icons';
 
 const EMPTY = { name: '', email: '', message: '' };
+const SENT_KEY = 'contactSent';
 
 export default function Contact() {
     const [values, setValues] = useState(EMPTY);
-    const [status, setStatus] = useState('idle'); // idle | sending | sent | error
+    const [status, setStatus] = useState('idle'); // idle | sending | error
     const [error, setError] = useState('');
+
+    // Once a message lands, the form stays closed for the rest of the session
+    // so nobody wonders whether it went through and sends the same note twice.
+    const [sent, setSent] = useState(
+        () => sessionStorage.getItem(SENT_KEY) === '1'
+    );
 
     const update = (field) => (event) =>
         setValues((v) => ({ ...v, [field]: event.target.value }));
@@ -54,8 +61,10 @@ export default function Contact() {
                 throw new Error(data.message || 'Something went wrong.');
             }
 
-            setStatus('sent');
+            sessionStorage.setItem(SENT_KEY, '1');
             setValues(EMPTY);
+            setStatus('idle');
+            setSent(true);
         } catch (err) {
             setStatus('error');
             setError(err.message || 'Could not send. Try email instead.');
@@ -71,6 +80,21 @@ export default function Contact() {
                 </SectionHead>
 
                 <div className="contact__grid">
+                    {sent ? (
+                        <div className="contact__done" role="status">
+                            <span className="contact__check" aria-hidden="true">
+                                <svg viewBox="0 0 52 52">
+                                    <circle cx="26" cy="26" r="24" />
+                                    <path d="M15 27l8 8 15-16" />
+                                </svg>
+                            </span>
+                            <h3 className="contact__doneTitle">Thank you.</h3>
+                            <p className="contact__doneText">
+                                Your message is on its way. I’ll get back to you
+                                shortly.
+                            </p>
+                        </div>
+                    ) : (
                     <form className="contact__form reveal" onSubmit={submit} noValidate>
                         {/* Hidden from people, irresistible to bots */}
                         <input
@@ -135,15 +159,8 @@ export default function Contact() {
                                 disabled={status === 'sending'}
                             >
                                 {status === 'sending' && <Spinner />}
-                                {status === 'sent' && <Check />}
-                                {status === 'sending'
-                                    ? 'Sending'
-                                    : status === 'sent'
-                                    ? 'Sent'
-                                    : 'Send message'}
-                                {status === 'idle' || status === 'error' ? (
-                                    <ArrowRight />
-                                ) : null}
+                                {status === 'sending' ? 'Sending' : 'Send message'}
+                                {status === 'sending' ? null : <ArrowRight />}
                             </button>
 
                             <p
@@ -151,12 +168,11 @@ export default function Contact() {
                                 role="status"
                                 aria-live="polite"
                             >
-                                {status === 'sent' &&
-                                    'Thanks, I will get back to you shortly.'}
                                 {status === 'error' && error}
                             </p>
                         </div>
                     </form>
+                    )}
 
                     <aside className="contact__aside reveal" style={{ '--reveal-delay': '90ms' }}>
                         <span className="label">Direct</span>

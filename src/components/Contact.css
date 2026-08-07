@@ -91,6 +91,88 @@
 }
 
 /* --------------------------------------------------------------------------
+   Sent state — replaces the form for the rest of the session
+   -------------------------------------------------------------------------- */
+
+.contact__done {
+    max-width: 34rem;
+    padding: clamp(2rem, 5vw, 3rem) 0;
+    animation: doneIn 700ms var(--ease-out) both;
+}
+
+.contact__check {
+    display: block;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 1.75rem;
+}
+
+.contact__check svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: var(--ink-0);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Ring then tick, drawn rather than popped in. */
+.contact__check circle {
+    stroke: var(--line-3);
+    stroke-dasharray: 151;
+    stroke-dashoffset: 151;
+    animation: drawRing 760ms var(--ease-out) 120ms forwards;
+}
+
+.contact__check path {
+    stroke-dasharray: 34;
+    stroke-dashoffset: 34;
+    animation: drawTick 460ms var(--ease-out) 620ms forwards;
+}
+
+.contact__doneTitle {
+    font-size: var(--t-h2);
+    font-weight: 600;
+    letter-spacing: -0.028em;
+    color: var(--ink-0);
+    margin-bottom: 0.75rem;
+}
+
+.contact__doneText {
+    font-size: var(--t-body-lg);
+    line-height: 1.55;
+    color: var(--ink-2);
+}
+
+@keyframes drawRing {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes drawTick {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes doneIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .contact__check circle,
+    .contact__check path {
+        stroke-dashoffset: 0;
+        animation: none;
+    }
+}
+
+/* --------------------------------------------------------------------------
    Direct links
    -------------------------------------------------------------------------- */
 

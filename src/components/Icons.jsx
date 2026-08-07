@@ -47,12 +47,6 @@ export const ChevronRight = (props) => (
     </svg>
 );
 
-export const Check = (props) => (
-    <svg {...base} {...props}>
-        <path d="M4 12.5 9 17.5 20 6.5" />
-    </svg>
-);
-
 export const Spinner = (props) => (
     <svg {...base} {...props} className="spin">
         <path d="M12 3a9 9 0 1 0 9 9" />
