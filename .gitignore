@@ -24,3 +24,7 @@ yarn-error.log*
 
 # local env
 .env.local
+
+# source photos staged at repo root, compressed copies live in src/resources2
+/Bear.png
+/Childhood.png

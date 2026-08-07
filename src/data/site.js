@@ -11,6 +11,8 @@ import sanFrancisco from '../resources2/sanFrancisco.jpg';
 import sunset from '../resources2/sunset.jpg';
 import sanFran2 from '../resources2/sanFran2.jpg';
 import sanFran3 from '../resources2/IMG_3431.jpg';
+import bear from '../resources2/bear.jpg';
+import childhood from '../resources2/childhood.jpg';
 
 export const NAV_SECTIONS = [
     { id: 'about', label: 'About' },
@@ -158,12 +160,15 @@ export const ARCHIVE = [
     },
 ];
 
+/* `focus` sets object-position for photos whose subject sits away from the
+   centre and would otherwise be cropped out of the tile. */
 export const GALLERY = [
     {
         image: firstCar,
         title: 'First Car',
         caption: '70,000 miles together and counting.',
         span: 'wide',
+        focus: '50% 72%',
     },
     {
         image: athlete,
@@ -175,6 +180,7 @@ export const GALLERY = [
         image: puppy,
         title: "Man's Best Friend",
         caption: 'Noah, as a puppy.',
+        span: 'tall',
     },
     {
         image: sanFrancisco,
@@ -202,7 +208,19 @@ export const GALLERY = [
     {
         image: sanFran3,
         title: 'Twin Peaks, Again',
-        caption: "New Year's Eve, 2024. This one is becoming a tradition.",
+        caption: "New Year's Eve, 2024. Seems like I've started a tradition...",
+        span: 'tall',
+    },
+    {
+        image: bear,
+        title: 'Bear',
+        caption: 'Hugging Bear before departing for the summer.',
+        span: 'tall',
+    },
+    {
+        image: childhood,
+        title: 'Childhood',
+        caption: 'My favorite photo in the world.',
         span: 'tall',
     },
 ];

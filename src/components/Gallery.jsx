@@ -55,7 +55,12 @@ export default function Gallery() {
                             onClick={() => setOpen(i)}
                             aria-label={`Open ${item.title}`}
                         >
-                            <img src={item.image} alt={item.title} loading="lazy" />
+                            <img
+                                src={item.image}
+                                alt={item.title}
+                                loading="lazy"
+                                style={item.focus ? { objectPosition: item.focus } : undefined}
+                            />
                             <span className="gal__caption">
                                 <span className="gal__title">{item.title}</span>
                                 <span className="gal__sub">{item.caption}</span>
