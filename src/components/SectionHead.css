@@ -3,16 +3,7 @@
 }
 
 .sechead__eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 0.875rem;
-    margin-bottom: 1.75rem;
-}
-
-.sechead__tick {
-    width: clamp(28px, 5vw, 56px);
-    height: 1px;
-    background: var(--line-2);
+    margin-bottom: 1.5rem;
 }
 
 .sechead__title {

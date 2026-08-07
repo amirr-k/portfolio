@@ -65,7 +65,7 @@ export default function Contact() {
     return (
         <section className="section contact" id="contact">
             <div className="container">
-                <SectionHead index="05" eyebrow="Contact" title="Let’s build something.">
+                <SectionHead eyebrow="Contact" title="Let’s build something.">
                     Open to internships, new grad roles, and side projects worth staying
                     up for. I read everything that lands here.
                 </SectionHead>

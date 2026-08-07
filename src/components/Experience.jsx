@@ -8,7 +8,7 @@ export default function Experience() {
     return (
         <section className="section experience" id="experience">
             <div className="container">
-                <SectionHead index="02" eyebrow="Experience" title="Where I have worked.">
+                <SectionHead eyebrow="Experience" title="Where I have worked.">
                     Infrastructure, embedded control, and applied machine learning across
                     industry, research, and competition.
                 </SectionHead>

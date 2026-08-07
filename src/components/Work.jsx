@@ -65,7 +65,7 @@ export default function Work() {
     return (
         <section className="section work" id="work">
             <div className="container">
-                <SectionHead index="03" eyebrow="Work" title="Things I have built.">
+                <SectionHead eyebrow="Work" title="Things I have built.">
                     Systems that had to hold up under real conditions: concurrency,
                     failure, and latency budgets that actually mattered.
                 </SectionHead>

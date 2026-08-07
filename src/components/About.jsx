@@ -9,7 +9,6 @@ export default function About() {
         <section className="section about" id="about">
             <div className="container">
                 <SectionHead
-                    index="01"
                     eyebrow="About"
                     title="Engineering, before I could ride a bike."
                 >
