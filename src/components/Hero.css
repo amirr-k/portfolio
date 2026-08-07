@@ -30,26 +30,39 @@
 .hero__eyebrow {
     display: flex;
     align-items: center;
-    gap: 0.875rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.875rem 2rem;
     margin-bottom: clamp(1.5rem, 4vh, 2.75rem);
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--line-1);
     opacity: 0;
     animation: heroFade 900ms var(--ease-out) 80ms forwards;
 }
 
-.hero__avatar {
-    width: 44px;
-    height: 44px;
-    border-radius: var(--radius-full);
-    border: 1px solid var(--line-2);
-    background: var(--bg-2);
-    object-fit: cover;
-    /* Monochrome by default — colour is reserved for interaction. */
-    filter: grayscale(1) contrast(1.05);
-    transition: filter var(--dur-mid) var(--ease-out);
+/* Availability marker — the one thing on the page that moves on its own. */
+.hero__status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
 }
 
-.hero__avatar:hover {
-    filter: none;
+.hero__pulse {
+    position: relative;
+    width: 6px;
+    height: 6px;
+    border-radius: var(--radius-full);
+    background: var(--ink-0);
+    flex: none;
+}
+
+.hero__pulse::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: var(--ink-0);
+    animation: pulse 2400ms var(--ease-out) infinite;
 }
 
 .hero__eyebrow .label {
@@ -160,6 +173,18 @@
     height: 40%;
     background: var(--ink-1);
     animation: scrollDrain 2200ms var(--ease-in-out) infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.65;
+    }
+    70%,
+    100% {
+        transform: scale(3.2);
+        opacity: 0;
+    }
 }
 
 @keyframes heroChar {

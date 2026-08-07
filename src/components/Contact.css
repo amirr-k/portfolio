@@ -13,6 +13,8 @@
     display: flex;
     flex-direction: column;
     gap: 1.75rem;
+    /* An input line longer than this stops reading as a field. */
+    max-width: 34rem;
 }
 
 .contact__honeypot {

@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Hero.css';
-import avatar from '../resources2/avatar.png';
 import { ROLES } from '../data/site';
 
 const NAME = ['Amir', 'Kiadi'];
@@ -56,11 +55,17 @@ export default function Hero() {
 
             <div className="container hero__inner">
                 <div className="hero__eyebrow">
-                    <img className="hero__avatar" src={avatar} alt="" width="44" height="44" />
                     <span className="label">
                         San Francisco Bay Area
                         <span className="hero__dot" />
                         UC San Diego
+                    </span>
+
+                    <span className="hero__status">
+                        <span className="hero__pulse" aria-hidden="true" />
+                        <span className="label">
+                            Currently — SWE Intern at IBM
+                        </span>
                     </span>
                 </div>
 
