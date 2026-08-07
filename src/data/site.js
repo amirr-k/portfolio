@@ -14,15 +14,16 @@ import sanFran3 from '../resources2/IMG_3431.jpg';
 
 export const NAV_SECTIONS = [
     { id: 'about', label: 'About' },
+    { id: 'experience', label: 'Experience' },
     { id: 'work', label: 'Work' },
     { id: 'gallery', label: 'Gallery' },
     { id: 'contact', label: 'Contact' },
 ];
 
 export const ROLES = [
-    'Computer Engineer',
     'Software Engineer',
-    'Developer',
+    'Computer Engineer',
+    'Systems Programmer',
     'Researcher',
     'Athlete',
 ];
@@ -32,63 +33,135 @@ export const LINKS = {
     linkedin: 'https://linkedin.com/in/amirr-k',
     resume: 'https://drive.google.com/file/d/1WnRczErYMbXcgzlKvXlrkqJR1Rzf_nTZ/view?usp=sharing',
     email: 'amir.kiadi@outlook.com',
+    phone: '650-224-9677',
 };
 
 export const STATS = [
-    { value: 'UC San Diego', label: 'Computer Engineering' },
+    { value: 'UC San Diego', label: 'B.S. + M.S. Computer Engineering' },
+    { value: '3.9 / 4.0', label: 'Provost Honors' },
     { value: 'Bay Area', label: 'California' },
-    { value: 'Since age 8', label: 'Writing code' },
 ];
 
 export const STACK = [
-    'Python',
+    'Go',
     'C / C++',
+    'Python',
     'Java',
+    'TypeScript',
     'React',
-    'PostgreSQL',
+    'Next.js',
     'FastAPI',
-    'Git',
+    'PostgreSQL',
+    'PyTorch',
+    'Kafka',
+    'Redis',
+    'Docker',
     'AWS',
 ];
 
+/* Roles are summarised at a high level and linked out — nothing lifted
+   verbatim from the résumé. */
+export const EXPERIENCE = [
+    {
+        company: 'IBM',
+        role: 'Software Engineer Intern',
+        period: 'Jun 2026 — Present',
+        summary:
+            'Working on machine learning for database query performance, plus internal agentic tooling that takes manual review work off engineers.',
+        tags: ['PyTorch', 'FastMCP', 'Next.js'],
+        href: 'https://www.ibm.com',
+    },
+    {
+        company: 'IEEE — RoboCup',
+        role: 'Software Engineer',
+        period: 'Oct 2025 — May 2026',
+        summary:
+            'Firmware and communications for competitive autonomous robots: control loops in C, a real-time tuning pipeline, and hardened network handling.',
+        tags: ['C', 'C++', 'Protobuf'],
+        href: 'https://ieee.ucsd.edu',
+    },
+    {
+        company: 'Leapstart After School',
+        role: 'Software Engineer Intern',
+        period: 'Jun 2025 — Aug 2025',
+        summary:
+            'Built the enrollment platform families actually check out through — authentication, recommendations, and payments end to end.',
+        tags: ['Python', 'SQL', 'Stripe'],
+        href: 'https://www.leapstartafterschool.com',
+    },
+    {
+        company: 'SEE Lab, UC San Diego',
+        role: 'Machine Learning Research Assistant',
+        period: 'Jan 2025 — Aug 2025',
+        summary:
+            'Adversarial robustness research — building the evaluation and tuning infrastructure that made large experiment sweeps tractable.',
+        tags: ['Python', 'PyTorch', 'Research'],
+        href: 'https://seelab.ucsd.edu',
+    },
+];
+
+/* `image` is optional. Projects without artwork fall back to a generated
+   typographic panel rather than a placeholder screenshot. */
 export const PROJECTS = [
     {
         index: '01',
-        title: 'amirkiadi.com',
+        title: 'Real Time Delivery Dispatch Engine',
+        year: '2026',
+        summary:
+            'A live dispatch system that assigns drivers to orders as conditions change, routes around road closures on the fly, and streams the whole fleet to a map in real time.',
+        stack: ['Go', 'React', 'PostgreSQL', 'WebSockets'],
+        href: 'https://github.com/amirr-k',
+        demo: null,
+    },
+    {
+        index: '02',
+        title: 'Cloud-Native Distributed Build Accelerator',
+        year: '2026',
+        summary:
+            'A distributed build system that figures out the smallest set of work a change actually requires, spreads it across workers, and keeps going when those workers die.',
+        stack: ['Java', 'Spring Boot', 'Kafka', 'Redis'],
+        href: 'https://github.com/amirr-k',
+        demo: null,
+    },
+    {
+        index: '03',
+        title: 'Blackjack Reinforcement Learning Agent',
         year: '2025',
         summary:
-            'This site. Built from scratch in React with no UI framework — every component, transition and layout primitive is hand-written.',
-        stack: ['React', 'CSS', 'GitHub Actions'],
+            'An agent that learns Blackjack from scratch until it plays near-optimally, with the simulation core compiled to WebAssembly so it runs entirely in the browser.',
+        stack: ['C++', 'Python', 'WebAssembly'],
+        href: 'https://github.com/amirr-k',
+        demo: null,
+    },
+];
+
+/* Earlier work, kept as a compact index rather than full cards. */
+export const ARCHIVE = [
+    {
+        title: 'amirkiadi.com',
+        year: '2026',
+        note: 'This site — React, no UI framework',
         image: projectSite,
         href: 'https://github.com/amirr-k/portfolio',
     },
     {
-        index: '02',
         title: 'Optimized UNIX Shell',
         year: '2024',
-        summary:
-            'A UNIX shell in C built on POSIX process management — fork, execvp, pipes and redirection. Passes 100% of 20+ test cases and runs past the original spec on performance.',
-        stack: ['C', 'POSIX', 'Systems'],
+        note: 'POSIX process management in C',
         image: projectShell,
         href: 'https://github.com/amirr-k/Optimized-Unix-Shell',
     },
     {
-        index: '03',
         title: 'UCMe',
         year: '2025',
-        summary:
-            'A full-stack matchmaking platform pairing students by interest and preference. JWT auth, relational modelling and a typed API layer end to end.',
-        stack: ['React', 'FastAPI', 'PostgreSQL'],
+        note: 'Full-stack student matchmaking platform',
         image: projectUCMe,
         href: 'https://github.com/amirr-k/UCMe',
     },
     {
-        index: '04',
         title: 'Voice Controlled AWS',
         year: '2025',
-        summary:
-            'Start and stop EC2 instances by speaking. Speech hits Transcribe, intent routes through Lambda, and the whole round trip closes in 18 seconds.',
-        stack: ['AWS Lambda', 'Transcribe', 'React'],
+        note: 'Speech-driven EC2 control via Lambda',
         image: projectAWS,
         href: 'https://github.com/amirr-k/Voice-Controlled-AWS',
     },
@@ -121,7 +194,8 @@ export const GALLERY = [
     {
         image: sunset,
         title: 'First Photo',
-        caption: 'The oldest picture in my camera roll — August 2019, the day I moved to California.',
+        caption:
+            'The oldest picture in my camera roll — August 2019, the day I moved to California.',
         span: 'wide',
     },
     {
