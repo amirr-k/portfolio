@@ -1,0 +1,212 @@
+.hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: calc(var(--nav-h) + 3rem) 8rem;
+    overflow: hidden;
+}
+
+/* Pointer-tracked light. --lit is toggled by JS so it eases away on exit. */
+.hero__spotlight {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: var(--lit, 0);
+    transition: opacity 600ms var(--ease-out);
+    background: radial-gradient(
+        420px circle at var(--mx, 50%) var(--my, 50%),
+        rgba(255, 255, 255, 0.07),
+        transparent 68%
+    );
+}
+
+.hero__inner {
+    position: relative;
+    z-index: 1;
+}
+
+.hero__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    margin-bottom: clamp(1.5rem, 4vh, 2.75rem);
+    opacity: 0;
+    animation: heroFade 900ms var(--ease-out) 80ms forwards;
+}
+
+.hero__avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--line-2);
+    background: var(--bg-2);
+    object-fit: cover;
+    /* Monochrome by default — colour is reserved for interaction. */
+    filter: grayscale(1) contrast(1.05);
+    transition: filter var(--dur-mid) var(--ease-out);
+}
+
+.hero__avatar:hover {
+    filter: none;
+}
+
+.hero__eyebrow .label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.hero__dot {
+    width: 3px;
+    height: 3px;
+    border-radius: var(--radius-full);
+    background: var(--ink-4);
+}
+
+/* --------------------------------------------------------------------------
+   Name — per-character rise out of a clipped line box
+   -------------------------------------------------------------------------- */
+
+.hero__name {
+    font-size: var(--t-display);
+    line-height: 0.86;
+    letter-spacing: -0.05em;
+    font-weight: 600;
+    color: var(--ink-0);
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.28em;
+}
+
+.hero__word {
+    display: flex;
+    overflow: hidden;
+    padding-bottom: 0.06em;
+}
+
+.hero__char {
+    display: inline-block;
+    transform: translateY(105%);
+    animation: heroChar 1100ms var(--ease-out) forwards;
+    animation-delay: var(--d);
+}
+
+/* --------------------------------------------------------------------------
+   Rotating role
+   -------------------------------------------------------------------------- */
+
+.hero__role {
+    margin-top: clamp(1.25rem, 3vh, 2rem);
+    height: 1.6em;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.hero__roleTrack {
+    display: block;
+    font-size: var(--t-body-lg);
+    letter-spacing: -0.02em;
+    color: var(--ink-2);
+    animation: roleIn 620ms var(--ease-out) both;
+}
+
+.hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: clamp(2rem, 5vh, 3.25rem);
+    opacity: 0;
+    animation: heroFade 900ms var(--ease-out) 620ms forwards;
+}
+
+/* --------------------------------------------------------------------------
+   Scroll cue — a hairline that drains downward on a loop
+   -------------------------------------------------------------------------- */
+
+.hero__scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 2.25rem;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    opacity: 0;
+    animation: heroFade 900ms var(--ease-out) 900ms forwards;
+    z-index: 1;
+}
+
+.hero__scroll:hover .label {
+    color: var(--ink-1);
+}
+
+.hero__scrollLine {
+    width: 1px;
+    height: 46px;
+    background: linear-gradient(to bottom, var(--line-3), transparent);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero__scrollLine::after {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: 40%;
+    background: var(--ink-1);
+    animation: scrollDrain 2200ms var(--ease-in-out) infinite;
+}
+
+@keyframes heroChar {
+    to {
+        transform: none;
+    }
+}
+
+@keyframes heroFade {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes roleIn {
+    from {
+        opacity: 0;
+        transform: translateY(0.9em);
+        filter: blur(4px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+        filter: none;
+    }
+}
+
+@keyframes scrollDrain {
+    0% {
+        transform: translateY(-100%);
+    }
+    60%,
+    100% {
+        transform: translateY(250%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero__char {
+        transform: none;
+        animation: none;
+    }
+
+    .hero__eyebrow,
+    .hero__actions,
+    .hero__scroll {
+        opacity: 1;
+        animation: none;
+    }
+}
