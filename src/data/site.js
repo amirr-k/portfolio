@@ -214,7 +214,7 @@ export const GALLERY = [
     {
         image: bear,
         title: 'Bear',
-        caption: 'Hugging Bear before departing for the summer.',
+        caption: 'Hugging Bearl before departing for the summer.',
         span: 'tall',
     },
     {
