@@ -40,35 +40,13 @@
     animation: heroFade 900ms var(--ease-out) 80ms forwards;
 }
 
-/* Availability marker — the one thing on the page that moves on its own. */
-.hero__status {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-}
-
-.hero__pulse {
-    position: relative;
-    width: 6px;
-    height: 6px;
-    border-radius: var(--radius-full);
-    background: var(--ink-0);
-    flex: none;
-}
-
-.hero__pulse::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: var(--ink-0);
-    animation: pulse 2400ms var(--ease-out) infinite;
-}
-
 .hero__eyebrow .label {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    font-size: 0.9375rem;
+    letter-spacing: 0.12em;
+    color: var(--ink-2);
 }
 
 .hero__dot {
@@ -110,9 +88,12 @@
    Rotating role
    -------------------------------------------------------------------------- */
 
+/* Font size lives on the clipping container so its `em` height resolves
+   against the actual type size and descenders aren't sheared off. */
 .hero__role {
     margin-top: clamp(1.25rem, 3vh, 2rem);
-    height: 1.6em;
+    font-size: clamp(1.5rem, 3.4vw, 2.5rem);
+    height: 1.45em;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -120,8 +101,10 @@
 
 .hero__roleTrack {
     display: block;
-    font-size: var(--t-body-lg);
-    letter-spacing: -0.02em;
+    font-size: inherit;
+    line-height: 1.3;
+    font-weight: 500;
+    letter-spacing: -0.03em;
     color: var(--ink-2);
     animation: roleIn 620ms var(--ease-out) both;
 }
@@ -133,58 +116,6 @@
     margin-top: clamp(2rem, 5vh, 3.25rem);
     opacity: 0;
     animation: heroFade 900ms var(--ease-out) 620ms forwards;
-}
-
-/* --------------------------------------------------------------------------
-   Scroll cue — a hairline that drains downward on a loop
-   -------------------------------------------------------------------------- */
-
-.hero__scroll {
-    position: absolute;
-    left: 50%;
-    bottom: 2.25rem;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-    opacity: 0;
-    animation: heroFade 900ms var(--ease-out) 900ms forwards;
-    z-index: 1;
-}
-
-.hero__scroll:hover .label {
-    color: var(--ink-1);
-}
-
-.hero__scrollLine {
-    width: 1px;
-    height: 46px;
-    background: linear-gradient(to bottom, var(--line-3), transparent);
-    position: relative;
-    overflow: hidden;
-}
-
-.hero__scrollLine::after {
-    content: '';
-    position: absolute;
-    inset-inline: 0;
-    top: 0;
-    height: 40%;
-    background: var(--ink-1);
-    animation: scrollDrain 2200ms var(--ease-in-out) infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 0.65;
-    }
-    70%,
-    100% {
-        transform: scale(3.2);
-        opacity: 0;
-    }
 }
 
 @keyframes heroChar {
@@ -212,13 +143,19 @@
     }
 }
 
-@keyframes scrollDrain {
-    0% {
-        transform: translateY(-100%);
+/* The location line is too long to sit on one row on a phone, and letting it
+   wrap mid-flex produced ragged columns. Stack it instead. */
+@media (max-width: 620px) {
+    .hero__eyebrow .label {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+        font-size: 0.875rem;
+        line-height: 1.4;
     }
-    60%,
-    100% {
-        transform: translateY(250%);
+
+    .hero__dot {
+        display: none;
     }
 }
 
@@ -229,8 +166,7 @@
     }
 
     .hero__eyebrow,
-    .hero__actions,
-    .hero__scroll {
+    .hero__actions {
         opacity: 1;
         animation: none;
     }

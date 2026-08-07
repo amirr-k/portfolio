@@ -14,9 +14,9 @@
     /* Ink, brightest to dimmest */
     --ink-0: #ffffff;
     --ink-1: #f5f5f7;
-    --ink-2: #a1a1a6;
-    --ink-3: #6e6e73;
-    --ink-4: #48484a;
+    --ink-2: #b0b0b6;
+    --ink-3: #8e8e94;
+    --ink-4: #5a5a5f;
 
     /* Hairlines */
     --line-1: rgba(255, 255, 255, 0.08);
@@ -40,9 +40,9 @@
     --t-h2: clamp(1.75rem, 3.2vw, 2.75rem);
     --t-h3: clamp(1.25rem, 1.8vw, 1.625rem);
     --t-body-lg: clamp(1.0625rem, 1.5vw, 1.375rem);
-    --t-body: 1rem;
-    --t-small: 0.875rem;
-    --t-label: 0.6875rem;
+    --t-body: 1.0625rem;
+    --t-small: 0.9375rem;
+    --t-label: 0.8125rem;
 
     /* Rhythm */
     --gutter: clamp(1.25rem, 5vw, 5rem);
@@ -62,7 +62,7 @@
     --dur-mid: 420ms;
     --dur-slow: 900ms;
 
-    --nav-h: 60px;
+    --nav-h: 68px;
 }
 
 /* ==========================================================================
@@ -205,7 +205,7 @@ a {
 .label {
     font-family: var(--font-mono);
     font-size: var(--t-label);
-    letter-spacing: 0.16em;
+    letter-spacing: 0.13em;
     text-transform: uppercase;
     color: var(--ink-3);
     font-weight: 500;

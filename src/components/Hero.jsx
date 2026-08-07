@@ -55,17 +55,12 @@ export default function Hero() {
 
             <div className="container hero__inner">
                 <div className="hero__eyebrow">
+                    {/* Each place is its own element so it stays a separate flex
+                        item when the dot is dropped and the row stacks on mobile. */}
                     <span className="label">
-                        San Francisco Bay Area
-                        <span className="hero__dot" />
-                        UC San Diego
-                    </span>
-
-                    <span className="hero__status">
-                        <span className="hero__pulse" aria-hidden="true" />
-                        <span className="label">
-                            Currently — SWE Intern at IBM
-                        </span>
+                        <span>San Francisco Bay Area</span>
+                        <span className="hero__dot" aria-hidden="true" />
+                        <span>UC San Diego</span>
                     </span>
                 </div>
 
@@ -100,15 +95,6 @@ export default function Hero() {
                     </button>
                 </div>
             </div>
-
-            <button
-                className="hero__scroll"
-                onClick={() => jump('about')}
-                aria-label="Scroll to about"
-            >
-                <span className="label">Scroll</span>
-                <span className="hero__scrollLine" />
-            </button>
         </section>
     );
 }

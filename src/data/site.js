@@ -38,8 +38,8 @@ export const LINKS = {
 
 export const STATS = [
     { value: 'UC San Diego', label: 'B.S. + M.S. Computer Engineering' },
-    { value: '3.9 / 4.0', label: 'Provost Honors' },
-    { value: 'Bay Area', label: 'California' },
+    { value: '3.9 / 4.0', label: 'GPA' },
+    { value: 'San Diego, California', label: 'Location' },
 ];
 
 export const STACK = [
@@ -78,25 +78,16 @@ export const EXPERIENCE = [
         summary:
             'Firmware and communications for competitive autonomous robots: control loops in C, a real-time tuning pipeline, and hardened network handling.',
         tags: ['C', 'C++', 'Protobuf'],
-        href: 'https://ieee.ucsd.edu',
-    },
-    {
-        company: 'Leapstart After School',
-        role: 'Software Engineer Intern',
-        period: 'Jun 2025 — Aug 2025',
-        summary:
-            'Built the enrollment platform families actually check out through — authentication, recommendations, and payments end to end.',
-        tags: ['Python', 'SQL', 'Stripe'],
-        href: 'https://www.leapstartafterschool.com',
+        href: 'https://ieeeatucsd.org/',
     },
     {
         company: 'SEE Lab, UC San Diego',
         role: 'Machine Learning Research Assistant',
         period: 'Jan 2025 — Aug 2025',
         summary:
-            'Adversarial robustness research — building the evaluation and tuning infrastructure that made large experiment sweeps tractable.',
+            'Adversarial robustness research, building the evaluation and tuning infrastructure that made large experiment sweeps tractable.',
         tags: ['Python', 'PyTorch', 'Research'],
-        href: 'https://seelab.ucsd.edu',
+        href: 'https://seelab.ucsd.edu/',
     },
 ];
 
@@ -140,7 +131,7 @@ export const ARCHIVE = [
     {
         title: 'amirkiadi.com',
         year: '2026',
-        note: 'This site — React, no UI framework',
+        note: 'This site, built in React with no UI framework',
         image: projectSite,
         href: 'https://github.com/amirr-k/portfolio',
     },
@@ -195,7 +186,7 @@ export const GALLERY = [
         image: sunset,
         title: 'First Photo',
         caption:
-            'The oldest picture in my camera roll — August 2019, the day I moved to California.',
+            'The oldest picture in my camera roll. August 2019, the day I moved to California.',
         span: 'wide',
     },
     {

@@ -8,26 +8,36 @@ export default function About() {
     return (
         <section className="section about" id="about">
             <div className="container">
-                <SectionHead index="01" eyebrow="About" title="Engineer, since before I could drive.">
-                    My father sat me in front of an HTML file when I was eight. I have
-                    been building things on screens ever since, and I have wanted the
-                    same job the whole time.
+                <SectionHead
+                    index="01"
+                    eyebrow="About"
+                    title="Engineering, before I could ride a bike."
+                >
+                    At eight years old, my father sat me down in front of a 2004 IBM
+                    ThinkPad and taught me the basics of HTML. Before I knew how to ride
+                    a bike, I was hooked on programming. Fittingly, my first software
+                    engineering job turned out to be at IBM, in the summer of 2026.
                 </SectionHead>
 
                 <div className="about__grid">
                     <div className="about__body reveal">
                         <p>
-                            I am finishing a B.S. and M.S. in Computer Engineering at the
-                            University of California, San Diego. Most of my time goes to
-                            backend and systems work — distributed services, concurrency,
-                            and the machine learning that increasingly sits behind both.
+                            Things have certainly changed since then. AI has accelerated
+                            how software gets written, and technology stacks keep shifting
+                            underneath us. Even so, my passion and commitment to software
+                            engineering have not faltered in the slightest.
                         </p>
                         <p>
-                            I care about the parts of software people feel but rarely name:
-                            how quickly a page settles, what a service does the moment a
-                            worker dies, how little a program can do and still be correct.
-                            That instinct shows up the same way in a control loop written in
-                            C, a build system that has to survive failure, and this website.
+                            Most of my time goes to backend and systems work: distributed
+                            services, concurrency, and the machine learning that now both
+                            speeds up how software is built and lives inside the product
+                            itself.
+                        </p>
+                        <p>
+                            In essence, I care about the parts of software people feel but
+                            rarely name. How quickly a page settles. What a service does
+                            the moment a worker dies. How little a program can do and still
+                            be correct.
                         </p>
                     </div>
 
@@ -56,7 +66,6 @@ export default function About() {
                     {[
                         { label: 'GitHub', href: LINKS.github },
                         { label: 'LinkedIn', href: LINKS.linkedin },
-                        { label: 'Résumé', href: LINKS.resume },
                     ].map((item) => (
                         <a
                             className="about__link"

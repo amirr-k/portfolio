@@ -33,7 +33,7 @@
 }
 
 .nav__brand {
-    font-size: 0.9375rem;
+    font-size: 1.125rem;
     font-weight: 600;
     letter-spacing: -0.02em;
     color: var(--ink-0);
@@ -52,7 +52,7 @@
 
 .nav__link {
     position: relative;
-    font-size: 0.875rem;
+    font-size: 1.0625rem;
     color: var(--ink-2);
     padding-block: 4px;
     transition: color var(--dur-fast) var(--ease-out);

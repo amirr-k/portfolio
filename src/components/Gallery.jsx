@@ -41,7 +41,7 @@ export default function Gallery() {
         <section className="section gallery" id="gallery">
             <div className="container">
                 <SectionHead index="04" eyebrow="Gallery" title="Outside the terminal.">
-                    Photographs are shown in monochrome and return to colour when you
+                    Photographs are shown in monochrome and return to color when you
                     reach for them.
                 </SectionHead>
 

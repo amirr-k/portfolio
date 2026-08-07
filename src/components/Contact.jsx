@@ -25,8 +25,8 @@ export default function Contact() {
         // No key configured yet — hand off to the visitor's mail client so the
         // form still does something useful.
         if (!HAS_FORM_BACKEND) {
-            const subject = encodeURIComponent(`Portfolio enquiry — ${values.name}`);
-            const body = encodeURIComponent(`${values.message}\n\n— ${values.name} (${values.email})`);
+            const subject = encodeURIComponent(`Portfolio enquiry from ${values.name}`);
+            const body = encodeURIComponent(`${values.message}\n\nFrom ${values.name} (${values.email})`);
             window.location.href = `mailto:${LINKS.email}?subject=${subject}&body=${body}`;
             return;
         }
@@ -152,7 +152,7 @@ export default function Contact() {
                                 aria-live="polite"
                             >
                                 {status === 'sent' &&
-                                    'Thanks — I will get back to you shortly.'}
+                                    'Thanks, I will get back to you shortly.'}
                                 {status === 'error' && error}
                             </p>
                         </div>
