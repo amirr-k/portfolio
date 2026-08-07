@@ -1,13 +1,13 @@
-import firstCar from '../resources2/FirstCar.jpg';
-import athlete from '../resources2/Athlete.jpg';
-import puppy from '../resources2/puppy.jpg';
-import grownUp from '../resources2/GrownUp.jpg';
-import sanFrancisco from '../resources2/sanFrancisco.jpg';
-import sunset from '../resources2/sunset.jpg';
-import sanFran2 from '../resources2/sanFran2.jpg';
-import sanFran3 from '../resources2/IMG_3431.jpg';
-import bear from '../resources2/bear.jpg';
-import childhood from '../resources2/childhood.jpg';
+import firstCar from '../assets/first-car.jpg';
+import weightlifting from '../assets/weightlifting.jpg';
+import noahPuppy from '../assets/noah-puppy.jpg';
+import noahGrown from '../assets/noah-grown.jpg';
+import twinPeaks2023 from '../assets/twin-peaks-2023.jpg';
+import firstPhoto from '../assets/first-photo.jpg';
+import cityFriends from '../assets/city-friends.jpg';
+import twinPeaks2024 from '../assets/twin-peaks-2024.jpg';
+import bear from '../assets/bear.jpg';
+import childhood from '../assets/childhood.jpg';
 
 export const NAV_SECTIONS = [
     { id: 'about', label: 'About' },
@@ -97,7 +97,8 @@ export const PROJECTS = [
         summary:
             'A live dispatch system that assigns drivers to orders as conditions change, routes around road closures on the fly, and streams the whole fleet to a map in real time.',
         stack: ['Go', 'React', 'PostgreSQL', 'WebSockets'],
-        href: 'https://github.com/amirr-k',
+        demo: 'https://amirr-k.github.io/dispatch-lab/',
+        source: 'https://github.com/amirr-k/dispatch-lab',
     },
     {
         index: '02',
@@ -106,7 +107,8 @@ export const PROJECTS = [
         summary:
             'A distributed build system that figures out the smallest set of work a change actually requires, spreads it across workers, and keeps going when those workers die.',
         stack: ['Java', 'Spring Boot', 'Kafka', 'Redis'],
-        href: 'https://github.com/amirr-k',
+        demo: 'https://amirr-k.github.io/forge-ci/',
+        source: 'https://github.com/amirr-k/forge-ci',
     },
     {
         index: '03',
@@ -115,7 +117,8 @@ export const PROJECTS = [
         summary:
             'An agent that learns Blackjack from scratch until it plays near-optimally, with the simulation core compiled to WebAssembly so it runs entirely in the browser.',
         stack: ['C++', 'Python', 'WebAssembly'],
-        href: 'https://github.com/amirr-k',
+        demo: 'https://blackjack-rl-agent.vercel.app/',
+        source: 'https://github.com/amirr-k/optimized-blackjack',
     },
 ];
 
@@ -158,42 +161,42 @@ export const GALLERY = [
         focus: '50% 72%',
     },
     {
-        image: athlete,
+        image: weightlifting,
         title: 'Weightlifting',
         caption: 'Four years in and still showing up.',
         span: 'tall',
     },
     {
-        image: puppy,
+        image: noahPuppy,
         title: "Man's Best Friend",
         caption: 'Noah, as a puppy.',
         span: 'tall',
     },
     {
-        image: sanFrancisco,
+        image: twinPeaks2023,
         title: 'Twin Peaks',
         caption: "New Year's Eve, 2023.",
         span: 'tall',
     },
     {
-        image: sunset,
+        image: firstPhoto,
         title: 'First Photo',
         caption:
             'The oldest picture in my camera roll. August 2019, the day I moved to California.',
         span: 'wide',
     },
     {
-        image: sanFran2,
+        image: cityFriends,
         title: 'Adventures in the City',
         caption: 'With my closest friends from high school.',
     },
     {
-        image: grownUp,
+        image: noahGrown,
         title: "Where'd the Time Go",
         caption: 'Noah today, at five years old.',
     },
     {
-        image: sanFran3,
+        image: twinPeaks2024,
         title: 'Twin Peaks, Again',
         caption: "New Year's Eve, 2024. Seems like I've started a tradition...",
         span: 'tall',

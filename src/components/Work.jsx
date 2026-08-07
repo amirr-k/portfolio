@@ -80,13 +80,14 @@ export default function Work() {
                             key={project.title}
                             style={{ '--reveal-delay': `${i * 70}ms` }}
                         >
-                            <a
+                            {/* A div, not an anchor — the row carries two
+                                destinations, and anchors cannot nest. The demo
+                                link stretches over the whole row; source sits
+                                above it. */}
+                            <div
                                 className={`work__row ${
                                     active !== null && active !== i ? 'is-dimmed' : ''
                                 }`}
-                                href={project.href}
-                                target="_blank"
-                                rel="noreferrer"
                                 onPointerEnter={(e) => onEnter(e, i)}
                                 onFocus={() => setActive(i)}
                                 onBlur={() => setActive(null)}
@@ -104,10 +105,29 @@ export default function Work() {
                                 </span>
 
                                 <span className="work__meta">
-                                    <span className="label">{project.year}</span>
-                                    <ArrowUpRight className="work__arrow" />
+                                    <span className="label work__year">{project.year}</span>
+                                    <span className="work__links">
+                                        <a
+                                            className="work__demo"
+                                            href={project.demo}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            Demo
+                                            <ArrowUpRight className="work__arrow" />
+                                        </a>
+                                        <a
+                                            className="work__source"
+                                            href={project.source}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            Source
+                                            <ArrowUpRight className="work__arrow" />
+                                        </a>
+                                    </span>
                                 </span>
-                            </a>
+                            </div>
                         </li>
                     ))}
                 </ol>

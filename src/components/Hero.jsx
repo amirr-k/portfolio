@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Hero.css';
-import portrait from '../resources2/portrait.jpg';
+import portrait from '../assets/portrait.jpg';
 import { ROLES } from '../data/site';
 
 const NAME = ['Amir', 'Kiadi'];
