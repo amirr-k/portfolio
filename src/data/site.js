@@ -203,7 +203,7 @@ export const GALLERY = [
     },
     {
         image: bear,
-        title: 'Bear',
+        title: 'Bearl',
         caption: 'Hugging Bearl before departing for the summer.',
         span: 'tall',
     },
