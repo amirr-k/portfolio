@@ -1,0 +1,193 @@
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-h);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    transition: background var(--dur-mid) var(--ease-out),
+        border-color var(--dur-mid) var(--ease-out),
+        backdrop-filter var(--dur-mid) var(--ease-out);
+    border-bottom: 1px solid transparent;
+}
+
+/* The bar only materialises once you leave the hero. */
+.nav.is-scrolled {
+    background: rgba(0, 0, 0, 0.62);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    border-bottom-color: var(--line-1);
+}
+
+.nav__inner {
+    width: 100%;
+    max-width: var(--max-w);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.nav__brand {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--ink-0);
+    transition: opacity var(--dur-fast) var(--ease-out);
+}
+
+.nav__brand:hover {
+    opacity: 0.65;
+}
+
+.nav__links {
+    display: flex;
+    align-items: center;
+    gap: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.nav__link {
+    position: relative;
+    font-size: 0.875rem;
+    color: var(--ink-2);
+    padding-block: 4px;
+    transition: color var(--dur-fast) var(--ease-out);
+}
+
+/* Hairline that wipes in from the left on hover and stays put when active. */
+.nav__link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--dur-mid) var(--ease-out);
+}
+
+.nav__link:hover {
+    color: var(--ink-0);
+}
+
+.nav__link:hover::after,
+.nav__link.is-active::after {
+    transform: scaleX(1);
+}
+
+.nav__link.is-active {
+    color: var(--ink-0);
+}
+
+/* --------------------------------------------------------------------------
+   Mobile toggle — two hairlines that cross into an X
+   -------------------------------------------------------------------------- */
+
+.nav__toggle {
+    display: none;
+    width: 28px;
+    height: 28px;
+    position: relative;
+    z-index: 110;
+}
+
+.nav__toggle span {
+    position: absolute;
+    left: 3px;
+    width: 22px;
+    height: 1px;
+    background: var(--ink-0);
+    transition: transform var(--dur-mid) var(--ease-out),
+        opacity var(--dur-fast) var(--ease-out);
+}
+
+.nav__toggle span:first-child {
+    top: 11px;
+}
+
+.nav__toggle span:last-child {
+    top: 17px;
+}
+
+.nav__toggle.is-open span:first-child {
+    transform: translateY(3px) rotate(45deg);
+}
+
+.nav__toggle.is-open span:last-child {
+    transform: translateY(-3px) rotate(-45deg);
+}
+
+/* --------------------------------------------------------------------------
+   Full-bleed mobile sheet
+   -------------------------------------------------------------------------- */
+
+.navsheet {
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.86);
+    -webkit-backdrop-filter: saturate(180%) blur(28px);
+    backdrop-filter: saturate(180%) blur(28px);
+    display: flex;
+    align-items: center;
+    padding-inline: var(--gutter);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--dur-mid) var(--ease-out),
+        visibility var(--dur-mid);
+}
+
+.navsheet.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.navsheet__links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.navsheet__links a {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    font-size: clamp(2rem, 11vw, 3.25rem);
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    color: var(--ink-0);
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity var(--dur-mid) var(--ease-out),
+        transform var(--dur-mid) var(--ease-out);
+    transition-delay: calc(var(--i) * 55ms + 80ms);
+}
+
+.navsheet.is-open .navsheet__links a {
+    opacity: 1;
+    transform: none;
+}
+
+.navsheet__index {
+    font-family: var(--font-mono);
+    font-size: var(--t-label);
+    letter-spacing: 0.16em;
+    color: var(--ink-3);
+}
+
+@media (max-width: 720px) {
+    .nav__links {
+        display: none;
+    }
+
+    .nav__toggle {
+        display: block;
+    }
+}
