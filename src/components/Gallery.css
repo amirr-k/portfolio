@@ -1,0 +1,235 @@
+.gal__grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: clamp(78px, 9vw, 128px);
+    grid-auto-flow: dense;
+    gap: clamp(0.5rem, 1vw, 0.875rem);
+}
+
+.gal__item {
+    position: relative;
+    grid-column: span 4;
+    grid-row: span 2;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--line-1);
+    background: var(--bg-2);
+    padding: 0;
+    display: block;
+    text-align: left;
+}
+
+.gal__item.is-wide {
+    grid-column: span 8;
+}
+
+.gal__item.is-tall {
+    grid-row: span 3;
+}
+
+.gal__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Monochrome at rest; colour is the reward for reaching for it. */
+    filter: grayscale(1) contrast(1.06) brightness(0.92);
+    transform: scale(1.02);
+    transition: filter 700ms var(--ease-out), transform 900ms var(--ease-out);
+}
+
+.gal__item:hover img,
+.gal__item:focus-visible img {
+    filter: grayscale(0) contrast(1) brightness(1);
+    transform: scale(1.06);
+}
+
+.gal__caption {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    padding: 2.5rem 1rem 0.875rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.78), transparent);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity var(--dur-mid) var(--ease-out),
+        transform var(--dur-mid) var(--ease-out);
+}
+
+.gal__item:hover .gal__caption,
+.gal__item:focus-visible .gal__caption {
+    opacity: 1;
+    transform: none;
+}
+
+.gal__title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--ink-0);
+}
+
+.gal__sub {
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    color: var(--ink-2);
+}
+
+/* --------------------------------------------------------------------------
+   Lightbox
+   -------------------------------------------------------------------------- */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: clamp(0.5rem, 2vw, 2rem);
+    padding: clamp(1rem, 4vw, 3rem);
+    background: rgba(0, 0, 0, 0.88);
+    -webkit-backdrop-filter: saturate(140%) blur(26px);
+    backdrop-filter: saturate(140%) blur(26px);
+    animation: lightboxIn 320ms var(--ease-out);
+}
+
+.lightbox__figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    min-height: 0;
+    animation: figureIn 420ms var(--ease-out);
+}
+
+.lightbox__figure img {
+    max-width: 100%;
+    max-height: 74vh;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+}
+
+.lightbox__figure figcaption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    text-align: center;
+    max-width: 52ch;
+}
+
+.lightbox__title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--ink-0);
+}
+
+.lightbox__sub {
+    font-size: 0.9375rem;
+    color: var(--ink-2);
+}
+
+.lightbox__count {
+    margin-top: 0.35rem;
+}
+
+.lightbox__nav,
+.lightbox__close {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--line-1);
+    color: var(--ink-2);
+    background: var(--fill-1);
+    transition: background var(--dur-fast) var(--ease-out),
+        color var(--dur-fast) var(--ease-out),
+        border-color var(--dur-fast) var(--ease-out);
+}
+
+.lightbox__nav:hover,
+.lightbox__close:hover {
+    background: var(--fill-3);
+    border-color: var(--line-3);
+    color: var(--ink-0);
+}
+
+.lightbox__close {
+    position: absolute;
+    top: clamp(1rem, 3vw, 2rem);
+    right: clamp(1rem, 3vw, 2rem);
+    z-index: 1;
+}
+
+@keyframes lightboxIn {
+    from {
+        opacity: 0;
+    }
+}
+
+@keyframes figureIn {
+    from {
+        opacity: 0;
+        transform: scale(0.97);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+    .gal__grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .gal__item,
+    .gal__item.is-wide {
+        grid-column: span 3;
+    }
+}
+
+@media (max-width: 560px) {
+    .gal__grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 58vw;
+    }
+
+    .gal__item,
+    .gal__item.is-wide {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .gal__item.is-tall {
+        grid-row: span 1;
+    }
+
+    /* No hover on touch — captions stay put so they're always readable. */
+    .gal__caption {
+        opacity: 1;
+        transform: none;
+    }
+
+    .gal__item img {
+        filter: grayscale(1) contrast(1.06) brightness(0.8);
+    }
+
+    .lightbox {
+        grid-template-columns: 1fr;
+        grid-template-areas: 'figure';
+    }
+
+    .lightbox__figure {
+        grid-area: figure;
+    }
+
+    .lightbox__nav {
+        display: none;
+    }
+}
