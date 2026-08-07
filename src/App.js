@@ -1,56 +1,46 @@
-import React, { useState, useEffect } from 'react';
-import NavigationBar from "./navigation";
-import Homepage from "./homepage";
-import AboutMe from "./about";
-import Projects from "./Projects";
-import Gallery from "./gallery";
-import ContactMe from "./contact";
+import React, { useState } from 'react';
+import Loader from './components/Loader';
+import Nav from './components/Nav';
+import Hero from './components/Hero';
+import About from './components/About';
+import Experience from './components/Experience';
+import Work from './components/Work';
+import Gallery from './components/Gallery';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import useReveal from './hooks/useReveal';
 
-function App() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [showBar, setShowBar] = useState(true);
-
-  useEffect(() => {
-    // Phase 1: Show bar for 1000ms
-    const loadingTime = 1000;
-    const holdTime = 500; // Time to show only Amir Kiadi after bar
-    document.documentElement.style.setProperty('--loading-duration', `${loadingTime}ms`);
-    const barTimer = setTimeout(() => {
-      setShowBar(false); // Hide bar, show only Amir Kiadi
-      // Phase 2: Hold Amir Kiadi for 500ms
-      const holdTimer = setTimeout(() => {
-      setIsLoading(false);
-      }, holdTime);
-      return () => clearTimeout(holdTimer);
-    }, loadingTime);
-    return () => clearTimeout(barTimer);
-  }, []);
-
-  if (isLoading) {
-    return (
-      <div className="loading-screen">
-        <div className="loading-content">
-          <h1 className="loading-name">Amir Kiadi</h1>
-          {showBar && (
-            <div className="loading-bar fade-bar">
-            <div className="loading-progress"></div>
-          </div>
-          )}
-        </div>
-      </div>
+export default function App() {
+    // Skip the intro on in-session re-renders so it never feels like a toll gate.
+    const [intro, setIntro] = useState(
+        () => !sessionStorage.getItem('introSeen')
     );
-  }
 
-  return (
-    <>
-      <NavigationBar />
-      <section id="home"><Homepage /></section>
-      <section id="about"><AboutMe /></section>
-      <section id="projects"><Projects /></section>
-      <section id="gallery"><Gallery /></section>
-      <section id="contact"><ContactMe /></section>
-    </>
-  );
+    useReveal();
+
+    const finishIntro = () => {
+        sessionStorage.setItem('introSeen', '1');
+        setIntro(false);
+    };
+
+    return (
+        <>
+            {intro && <Loader onDone={finishIntro} />}
+
+            <div className="grid-backdrop" aria-hidden="true" />
+
+            <div className="shell">
+                <Nav />
+                <main>
+                    <Hero />
+                    <About />
+                    <Experience />
+                    <Work />
+                    <Gallery />
+                    <Contact />
+                </main>
+                <Footer />
+            </div>
+        </>
+    );
 }
-
-export default App;

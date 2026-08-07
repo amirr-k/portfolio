@@ -1,0 +1,123 @@
+.contact__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: clamp(2.5rem, 6vw, 6rem);
+    align-items: start;
+}
+
+/* --------------------------------------------------------------------------
+   Form — hairline underlines rather than boxed inputs
+   -------------------------------------------------------------------------- */
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.contact__honeypot {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+}
+
+.field input,
+.field textarea {
+    width: 100%;
+    padding: 0.75rem 0 0.875rem;
+    font-size: var(--t-body-lg);
+    letter-spacing: -0.018em;
+    color: var(--ink-0);
+    background: transparent;
+    border-bottom: 1px solid var(--line-2);
+    border-radius: 0;
+    resize: none;
+    transition: border-color var(--dur-mid) var(--ease-out);
+}
+
+.field textarea {
+    line-height: 1.55;
+    resize: vertical;
+    min-height: 7rem;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+    color: var(--ink-4);
+}
+
+.field input:focus,
+.field textarea:focus {
+    outline: none;
+    border-bottom-color: var(--ink-0);
+}
+
+/* The label brightens with its field so focus reads as one object. */
+.field:focus-within .label {
+    color: var(--ink-1);
+}
+
+.contact__submit {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.contact__status {
+    font-size: var(--t-small);
+    color: var(--ink-2);
+}
+
+.spin {
+    animation: spin 900ms linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Direct links
+   -------------------------------------------------------------------------- */
+
+.contact__aside {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.5rem;
+}
+
+.contact__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.625rem;
+    margin-top: 1rem;
+}
+
+.contact__list a {
+    font-size: 1.0625rem;
+    letter-spacing: -0.02em;
+}
+
+.contact__elsewhere {
+    margin-top: 2.5rem;
+}
+
+@media (max-width: 860px) {
+    .contact__grid {
+        grid-template-columns: 1fr;
+    }
+}

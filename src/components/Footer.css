@@ -1,0 +1,35 @@
+.footer {
+    border-top: 1px solid var(--line-1);
+    padding-block: 2.5rem 3rem;
+}
+
+.footer__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+}
+
+.footer__links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer__links a,
+.footer__links button {
+    transition: color var(--dur-fast) var(--ease-out);
+}
+
+.footer__links a:hover,
+.footer__links button:hover {
+    color: var(--ink-0);
+}
+
+@media (max-width: 700px) {
+    .footer__built {
+        order: 3;
+        width: 100%;
+    }
+}
