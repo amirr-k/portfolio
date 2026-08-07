@@ -27,9 +27,3 @@
     color: var(--ink-0);
 }
 
-@media (max-width: 700px) {
-    .footer__built {
-        order: 3;
-        width: 100%;
-    }
-}

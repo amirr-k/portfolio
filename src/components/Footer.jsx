@@ -12,10 +12,6 @@ export default function Footer() {
                     © {new Date().getFullYear()} Amir Kiadi
                 </span>
 
-                <span className="label footer__built">
-                    Built in React · Deployed on GitHub Pages
-                </span>
-
                 <div className="footer__links">
                     <a className="label" href={LINKS.github} target="_blank" rel="noreferrer">
                         GitHub

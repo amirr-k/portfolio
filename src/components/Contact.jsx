@@ -188,11 +188,6 @@ export default function Contact() {
                                     LinkedIn
                                 </a>
                             </li>
-                            <li>
-                                <a className="link" href={LINKS.resume} target="_blank" rel="noreferrer">
-                                    Résumé
-                                </a>
-                            </li>
                         </ul>
                     </aside>
                 </div>
