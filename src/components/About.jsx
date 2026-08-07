@@ -17,16 +17,17 @@ export default function About() {
                 <div className="about__grid">
                     <div className="about__body reveal">
                         <p>
-                            I study Computer Engineering at the University of California,
-                            San Diego, where I spend most of my time somewhere between
-                            systems programming and the interfaces that sit on top of them.
+                            I am finishing a B.S. and M.S. in Computer Engineering at the
+                            University of California, San Diego. Most of my time goes to
+                            backend and systems work — distributed services, concurrency,
+                            and the machine learning that increasingly sits behind both.
                         </p>
                         <p>
-                            I care about the parts of software people feel but rarely name —
-                            how fast a page settles, whether an animation resolves where your
-                            eye expects it to, how little a program can do and still be
-                            correct. That instinct shows up in a UNIX shell written in C just
-                            as much as it does in this website.
+                            I care about the parts of software people feel but rarely name:
+                            how quickly a page settles, what a service does the moment a
+                            worker dies, how little a program can do and still be correct.
+                            That instinct shows up the same way in a control loop written in
+                            C, a build system that has to survive failure, and this website.
                         </p>
                     </div>
 
