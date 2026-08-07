@@ -1,8 +1,3 @@
-import projectSite from '../resources2/project1.png';
-import projectShell from '../resources2/shell.png';
-import projectUCMe from '../resources2/UCMe.png';
-import projectAWS from '../resources2/AWS.png';
-
 import firstCar from '../resources2/FirstCar.jpg';
 import athlete from '../resources2/Athlete.jpg';
 import puppy from '../resources2/puppy.jpg';
@@ -33,7 +28,6 @@ export const ROLES = [
 export const LINKS = {
     github: 'https://github.com/amirr-k',
     linkedin: 'https://linkedin.com/in/amirr-k',
-    resume: 'https://drive.google.com/file/d/1WnRczErYMbXcgzlKvXlrkqJR1Rzf_nTZ/view?usp=sharing',
     email: 'amir.kiadi@outlook.com',
     phone: '650-224-9677',
 };
@@ -104,7 +98,6 @@ export const PROJECTS = [
             'A live dispatch system that assigns drivers to orders as conditions change, routes around road closures on the fly, and streams the whole fleet to a map in real time.',
         stack: ['Go', 'React', 'PostgreSQL', 'WebSockets'],
         href: 'https://github.com/amirr-k',
-        demo: null,
     },
     {
         index: '02',
@@ -114,7 +107,6 @@ export const PROJECTS = [
             'A distributed build system that figures out the smallest set of work a change actually requires, spreads it across workers, and keeps going when those workers die.',
         stack: ['Java', 'Spring Boot', 'Kafka', 'Redis'],
         href: 'https://github.com/amirr-k',
-        demo: null,
     },
     {
         index: '03',
@@ -124,7 +116,6 @@ export const PROJECTS = [
             'An agent that learns Blackjack from scratch until it plays near-optimally, with the simulation core compiled to WebAssembly so it runs entirely in the browser.',
         stack: ['C++', 'Python', 'WebAssembly'],
         href: 'https://github.com/amirr-k',
-        demo: null,
     },
 ];
 
@@ -134,28 +125,24 @@ export const ARCHIVE = [
         title: 'amirkiadi.com',
         year: '2026',
         note: 'This site, built in React with no UI framework',
-        image: projectSite,
         href: 'https://github.com/amirr-k/portfolio',
     },
     {
         title: 'Optimized UNIX Shell',
         year: '2024',
         note: 'POSIX process management in C',
-        image: projectShell,
         href: 'https://github.com/amirr-k/Optimized-Unix-Shell',
     },
     {
         title: 'UCMe',
         year: '2025',
         note: 'Full-stack student matchmaking platform',
-        image: projectUCMe,
         href: 'https://github.com/amirr-k/UCMe',
     },
     {
         title: 'Voice Controlled AWS',
         year: '2025',
         note: 'Speech-driven EC2 control via Lambda',
-        image: projectAWS,
         href: 'https://github.com/amirr-k/Voice-Controlled-AWS',
     },
 ];

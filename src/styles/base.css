@@ -191,13 +191,6 @@ a {
     position: relative;
 }
 
-/* Hairline that spans the full section width */
-.rule {
-    height: 1px;
-    background: var(--line-1);
-    border: 0;
-}
-
 /* ==========================================================================
    Typography utilities
    ========================================================================== */
@@ -211,26 +204,10 @@ a {
     font-weight: 500;
 }
 
-.display {
-    font-size: var(--t-display);
-    line-height: 0.88;
-    letter-spacing: -0.045em;
-    font-weight: 600;
-    color: var(--ink-0);
-}
-
 .h1 {
     font-size: var(--t-h1);
     line-height: 1.02;
     letter-spacing: -0.035em;
-    font-weight: 600;
-    color: var(--ink-0);
-}
-
-.h2 {
-    font-size: var(--t-h2);
-    line-height: 1.1;
-    letter-spacing: -0.028em;
     font-weight: 600;
     color: var(--ink-0);
 }

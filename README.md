@@ -41,15 +41,13 @@ GitHub Pages is static, so the form posts straight from the visitor's browser
 to [Web3Forms](https://web3forms.com), which sends the mail. Nothing runs on
 this host.
 
-Set the key one of two ways:
+The access key lives in `src/config.js`. It is public by design — it ships in
+the JS bundle either way — and only authorises "send Amir an email". The
+hidden honeypot field is what stops bots.
 
-- **Local:** create `.env.local` with `REACT_APP_WEB3FORMS_KEY=your-key`
-- **Deployed:** add a repository secret named `WEB3FORMS_KEY` (Settings →
-  Secrets and variables → Actions)
-
-Without a key the form falls back to opening the visitor's mail client with
-the message pre-filled, so it is never dead. The key is public by design and
-only authorises "send Amir an email"; the honeypot field is what stops bots.
+To swap it without editing the file, set `REACT_APP_WEB3FORMS_KEY` in
+`.env.local` locally, or as a repository secret named `WEB3FORMS_KEY`
+(Settings → Secrets and variables → Actions); either overrides the default.
 
 ## Deployment
 

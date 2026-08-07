@@ -13,9 +13,9 @@
  * client with the message pre-filled, so it is never dead.
  */
 export const WEB3FORMS_KEY =
-    process.env.REACT_APP_WEB3FORMS_KEY || 'PASTE_YOUR_WEB3FORMS_KEY_HERE';
+    process.env.REACT_APP_WEB3FORMS_KEY ||
+    'e693451b-665a-48ab-861c-70674ccfbc48';
 
-export const HAS_FORM_BACKEND =
-    Boolean(WEB3FORMS_KEY) && WEB3FORMS_KEY !== 'PASTE_YOUR_WEB3FORMS_KEY_HERE';
+export const HAS_FORM_BACKEND = Boolean(WEB3FORMS_KEY);
 
 export const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';

@@ -25,6 +25,8 @@ yarn-error.log*
 # local env
 .env.local
 
-# source photos staged at repo root, compressed copies live in src/resources2
-/Bear.png
-/Childhood.png
+# Original photos staged at the repo root. Compressed, cropped copies are
+# committed under src/resources2 — the raw files stay local.
+/*.png
+/*.heic
+/*.jpg
