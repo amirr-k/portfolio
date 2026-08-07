@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Hero.css';
+import portrait from '../resources2/portrait.jpg';
 import { ROLES } from '../data/site';
 
 const NAME = ['Amir', 'Kiadi'];
@@ -64,35 +65,48 @@ export default function Hero() {
                     </span>
                 </div>
 
-                <h1 className="hero__name">
-                    {NAME.map((word, w) => (
-                        <span className="hero__word" key={word}>
-                            {word.split('').map((char, c) => (
-                                <span
-                                    className="hero__char"
-                                    key={`${word}-${c}`}
-                                    style={{ '--d': `${(w * 4 + c) * 42 + 120}ms` }}
-                                >
-                                    {char}
+                <div className="hero__grid">
+                    <div className="hero__text">
+                        <h1 className="hero__name">
+                            {NAME.map((word, w) => (
+                                <span className="hero__word" key={word}>
+                                    {word.split('').map((char, c) => (
+                                        <span
+                                            className="hero__char"
+                                            key={`${word}-${c}`}
+                                            style={{ '--d': `${(w * 4 + c) * 42 + 120}ms` }}
+                                        >
+                                            {char}
+                                        </span>
+                                    ))}
                                 </span>
                             ))}
-                        </span>
-                    ))}
-                </h1>
+                        </h1>
 
-                <div className="hero__role">
-                    <span className="hero__roleTrack" key={role}>
-                        {ROLES[role]}
-                    </span>
-                </div>
+                        <div className="hero__role">
+                            <span className="hero__roleTrack" key={role}>
+                                {ROLES[role]}
+                            </span>
+                        </div>
 
-                <div className="hero__actions">
-                    <button className="btn btn--solid" onClick={() => jump('work')}>
-                        View work
-                    </button>
-                    <button className="btn btn--ghost" onClick={() => jump('contact')}>
-                        Get in touch
-                    </button>
+                        <div className="hero__actions">
+                            <button className="btn btn--solid" onClick={() => jump('work')}>
+                                View work
+                            </button>
+                            <button className="btn btn--ghost" onClick={() => jump('contact')}>
+                                Get in touch
+                            </button>
+                        </div>
+                    </div>
+
+                    <figure className="hero__portrait">
+                        <img
+                            src={portrait}
+                            alt="Amir Kiadi"
+                            width="760"
+                            height="1013"
+                        />
+                    </figure>
                 </div>
             </div>
         </section>

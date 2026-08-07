@@ -56,6 +56,41 @@
     background: var(--ink-4);
 }
 
+/* Text and portrait sit on one row, bottom-aligned so the frame lands on the
+   same line as the buttons rather than floating. */
+.hero__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: end;
+}
+
+.hero__portrait {
+    width: clamp(190px, 21vw, 310px);
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--line-2);
+    background: var(--bg-2);
+    opacity: 0;
+    animation: heroFade 1100ms var(--ease-out) 420ms forwards;
+}
+
+.hero__portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Monochrome at rest, like the gallery — colour is the reward for hovering. */
+    filter: grayscale(1) contrast(1.05) brightness(0.95);
+    transform: scale(1.02);
+    transition: filter 700ms var(--ease-out), transform 900ms var(--ease-out);
+}
+
+.hero__portrait:hover img {
+    filter: none;
+    transform: scale(1.06);
+}
+
 /* --------------------------------------------------------------------------
    Name — per-character rise out of a clipped line box
    -------------------------------------------------------------------------- */
@@ -145,6 +180,21 @@
 
 /* The location line is too long to sit on one row on a phone, and letting it
    wrap mid-flex produced ragged columns. Stack it instead. */
+/* Below the two-column threshold the portrait leads, sized down so it reads
+   as an avatar rather than a hero image. */
+@media (max-width: 860px) {
+    .hero__grid {
+        grid-template-columns: 1fr;
+        align-items: start;
+        gap: 1.75rem;
+    }
+
+    .hero__portrait {
+        order: -1;
+        width: clamp(120px, 34vw, 170px);
+    }
+}
+
 @media (max-width: 620px) {
     .hero__eyebrow .label {
         flex-direction: column;
