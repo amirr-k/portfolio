@@ -65,9 +65,8 @@ export default function Work() {
     return (
         <section className="section work" id="work">
             <div className="container">
-                <SectionHead eyebrow="Work" title="Things I have built.">
-                    Systems that had to hold up under real conditions: concurrency,
-                    failure, and latency budgets that actually mattered.
+                <SectionHead eyebrow="Work" title="Things I’ve built.">
+                    Showcasing the projects I’m most proud of.
                 </SectionHead>
 
                 <ol
