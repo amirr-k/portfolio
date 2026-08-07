@@ -1,0 +1,59 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: ['master']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deploy finish; queue at most one behind it.
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - run: npm ci
+
+      # CRA treats warnings as errors on CI, which fails builds over unused
+      # imports. Warnings still print — they just don't block a deploy.
+      - name: Build
+        run: npm run build
+        env:
+          CI: false
+          REACT_APP_WEB3FORMS_KEY: ${{ secrets.WEB3FORMS_KEY }}
+
+      # Pages serves the SPA from /portfolio/, and a deep link there would 404
+      # without this. Copying index.html to 404.html makes Pages fall back to
+      # the app instead of its own error page.
+      - name: Add SPA fallback
+        run: cp build/index.html build/404.html
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: './build'
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
