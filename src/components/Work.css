@@ -17,9 +17,16 @@
     transition: opacity var(--dur-mid) var(--ease-out);
 }
 
-/* Everything but the hovered row recedes — the list behaves like a focus lens. */
-.work__row.is-dimmed {
+/* Everything but the hovered row recedes — the list behaves like a focus lens.
+   Pure CSS: dim the whole list on hover, then lift the row under the cursor
+   (and any row holding keyboard focus) back to full strength. */
+.work__list:hover .work__row {
     opacity: 0.32;
+}
+
+.work__list .work__row:hover,
+.work__list .work__row:focus-within {
+    opacity: 1;
 }
 
 .work__index {
@@ -120,80 +127,6 @@
 .work__demo:hover .work__arrow,
 .work__source:hover .work__arrow {
     transform: translate(2px, -2px);
-}
-
-/* --------------------------------------------------------------------------
-   Cursor-tracked preview
-   -------------------------------------------------------------------------- */
-
-.work__preview {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 40;
-    width: clamp(280px, 26vw, 400px);
-    aspect-ratio: 4 / 3;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 320ms var(--ease-out);
-}
-
-.work__preview.is-live {
-    opacity: 1;
-}
-
-.work__card {
-    position: absolute;
-    inset: 0;
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    border: 1px solid var(--line-2);
-    background: var(--bg-2);
-    opacity: 0;
-    transform: scale(0.94);
-    transition: opacity 300ms var(--ease-out), transform 420ms var(--ease-out);
-}
-
-.work__card.is-current {
-    opacity: 1;
-    transform: none;
-}
-
-.work__card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(1) contrast(1.08);
-}
-
-/* Typographic stand-in, on the same lattice as the page backdrop. */
-.work__cardType {
-    height: 100%;
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: var(--bg-1);
-    background-image: linear-gradient(to right, var(--line-1) 1px, transparent 1px),
-        linear-gradient(to bottom, var(--line-1) 1px, transparent 1px);
-    background-size: 34px 34px;
-}
-
-.work__cardTitle {
-    font-size: 1.375rem;
-    font-weight: 600;
-    letter-spacing: -0.03em;
-    line-height: 1.15;
-    color: var(--ink-0);
-    margin-top: auto;
-}
-
-.work__cardStack {
-    margin-top: 0.75rem;
-    font-family: var(--font-mono);
-    font-size: 0.6875rem;
-    letter-spacing: 0.06em;
-    color: var(--ink-3);
 }
 
 /* --------------------------------------------------------------------------

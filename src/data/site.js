@@ -87,8 +87,7 @@ export const EXPERIENCE = [
     },
 ];
 
-/* `image` is optional. Projects without artwork fall back to a generated
-   typographic panel rather than a placeholder screenshot. */
+/* The featured work, rendered as a numbered index. */
 export const PROJECTS = [
     {
         index: '01',
