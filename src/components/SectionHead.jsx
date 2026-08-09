@@ -1,10 +1,14 @@
 import React from 'react';
 import './SectionHead.css';
 
-/** Mono eyebrow over a large statement. Used by every section. */
-export default function SectionHead({ eyebrow, title, children }) {
+/**
+ * Mono eyebrow over a large statement. Used by every section. `align="right"`
+ * swings the eyebrow and title to the far margin; the supporting line below
+ * stays on the left either way.
+ */
+export default function SectionHead({ eyebrow, title, align = 'left', children }) {
     return (
-        <header className="sechead">
+        <header className={`sechead${align === 'right' ? ' sechead--right' : ''}`}>
             <div className="sechead__eyebrow reveal">
                 <span className="label">{eyebrow}</span>
             </div>
