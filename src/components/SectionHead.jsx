@@ -3,8 +3,8 @@ import './SectionHead.css';
 
 /**
  * Mono eyebrow over a large statement. Used by every section. `align="right"`
- * swings the eyebrow and title to the far margin; the supporting line below
- * stays on the left either way.
+ * swings the whole header — eyebrow, title, and supporting line — to the far
+ * margin.
  */
 export default function SectionHead({ eyebrow, title, align = 'left', children }) {
     return (

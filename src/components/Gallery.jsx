@@ -40,7 +40,7 @@ export default function Gallery() {
     return (
         <section className="section gallery" id="gallery">
             <div className="container">
-                <SectionHead eyebrow="Gallery" title="Outside the terminal.">
+                <SectionHead eyebrow="Gallery" title="Outside the terminal." align="right">
                     Moments frozen in time.
                 </SectionHead>
 

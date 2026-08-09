@@ -14,14 +14,13 @@
     margin-top: 1.5rem;
 }
 
-/* Right-aligned variant. Only the eyebrow and title cross the column — the
-   title is width-capped, so it needs the auto margin as well as the text
-   alignment to actually reach the far edge. */
-.sechead--right .sechead__eyebrow {
+/* Right-aligned variant. The title and sub are both width-capped, so each
+   needs the auto margin as well as the text alignment to reach the far edge. */
+.sechead--right {
     text-align: right;
 }
 
-.sechead--right .sechead__title {
+.sechead--right .sechead__title,
+.sechead--right .sechead__sub {
     margin-left: auto;
-    text-align: right;
 }
